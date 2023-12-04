@@ -1,10 +1,8 @@
 "use client";
-
+import Image from "next/image";
 import Button from "./ui/Button";
 import { AiOutlineBuild } from "react-icons/ai";
 import { IoIosArrowRoundForward } from "react-icons/io";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,8 +12,34 @@ const Marketing = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 2.5,
+    slidesToScroll: 2.5,
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 3,
+    //       infinite: true,
+    //       dots: true,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 600,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 2,
+    //       initialSlide: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 480,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
   };
   return (
     <section className="mt-[150px]">
@@ -38,23 +62,27 @@ const Marketing = () => {
           <Button icon={<IoIosArrowRoundForward />} />
         </div>
       </div>
-      <Slider {...settings}>
-        <div
-          className="bg-[#37f737] w-[500px] h-[440px] rounded-lg slider-item "
-          style={{ marginRight: "15px" }}
-        >
-          slide 1
+      <Slider {...settings} className="mt-[50px]">
+        <div className="bg-[#37f737] w-[200px] h-[440px] rounded-lg">
+          <div className="relative w-4/5 h-[400px] mx-auto top-[50px] rounded-lg overflow-hidden">
+            <Image src="/hero.png" fill alt="" className="object-cover" />
+          </div>
         </div>
-        <div
-          className="bg-blue-300 w-[500px] h-[440px] rounded-lg slider-item "
-          style={{ marginRight: "15px" }}
-        >
-          slide 2
+        <div className="bg-gray-200 w-[500px] h-[440px] rounded-lg">
+          <div className="relative w-4/5 h-[400px] mx-auto top-[50px] rounded-lg overflow-hidden">
+            <Image src="/p1.png" fill alt="" className="object-cover" />
+          </div>
         </div>
-        <div className="bg-yellow-300 w-[500px] h-[440px] rounded-lg slider-item ">
-          slide 3
+        <div className="bg-gray-200 w-[500px] h-[440px] rounded-lg">
+          <div className="relative w-4/5 h-[400px] mx-auto top-[50px] rounded-lg overflow-hidden">
+            <Image src="/p2.png" fill alt="" className="object-cover" />
+          </div>
         </div>
-        <div className="bg-red-300 w-[500px] h-[440px] rounded-lg">slide 4</div>
+        <div className="bg-gray-200 w-[500px] h-[440px] rounded-lg">
+          <div className="relative w-4/5 h-[400px] mx-auto top-[50px] rounded-lg overflow-hidden">
+            <Image src="/p3.png" fill alt="" className="object-cover" />
+          </div>
+        </div>
       </Slider>
     </section>
   );
