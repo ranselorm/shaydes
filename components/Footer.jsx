@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 const footerLinks = [
@@ -9,7 +10,9 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className="mt-[150px]">
-      <h2 className="text-center mb-12">Logo</h2>
+      <div className="flex justify-center mb-12">
+        <Image src="/lg.png" width={100} height={100} alt="logo" />
+      </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
         {footerLinks.map((link, index) => (
           <div

@@ -6,7 +6,7 @@ const Hero = () => {
     <section>
       <div className="flex justify-center flex-col items-center gap-y-6">
         <div>
-          <h2>logo</h2>
+          <Image src="/lg.png" width={100} height={100} alt="logo" />
         </div>
         <article className="flex justify-center flex-col items-center gap-y-6 w-full lg:w-3/5 lg:text-center mb-8">
           <h2 className="font-semibold  text-[16px] lg:text-[30px] lg:leading-[40px]">
