@@ -1,19 +1,10 @@
 "use client";
 import Image from "next/image";
-import Button from "./ui/Button";
-import { AiOutlineBuild } from "react-icons/ai";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import Slider from "react-slick";
-import ReactPlayer from "react-player";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const OutsideWork = () => {
-  const videos = [
-    "https://youtube.com/shorts/izHVaeQzvQ4?si=BXVphq37xNpCoZc7",
-    "https://youtube.com/shorts/izHVaeQzvQ4?si=BXVphq37xNpCoZc7",
-    "https://youtube.com/shorts/izHVaeQzvQ4?si=BXVphq37xNpCoZc7",
-  ];
   const settings = {
     dots: false,
     centerMode: true,
@@ -21,7 +12,7 @@ const OutsideWork = () => {
     speed: 500,
     centerPadding: "1px",
     slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -68,10 +59,7 @@ const OutsideWork = () => {
         </div> */}
       </div>
       <Slider {...settings} className="mt-[50px]">
-        <div
-          className="relative w-[200px] h-[440px] rounded-lg overflow-hidden"
-          style={{ width: 100 }}
-        >
+        <div className="relative w-[200px] h-[440px] rounded-lg overflow-hidden">
           <Image src="/hero.png" fill alt="" className="object-cover" />
         </div>
         <div className="relative w-[200px] h-[440px] rounded-lg overflow-hidden">
