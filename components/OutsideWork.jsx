@@ -70,7 +70,7 @@ const OutsideWork = () => {
       <Slider {...settings} className="mt-[50px]">
         <div
           className="relative w-[200px] h-[440px] rounded-lg overflow-hidden"
-          style={{ width: "100px", height: "200px" }}
+          style={{ width: 100 }}
         >
           <Image src="/hero.png" fill alt="" className="object-cover" />
         </div>

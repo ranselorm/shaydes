@@ -69,25 +69,25 @@ const Natural = () => {
       </div>
 
       <Slider {...settings} className="mt-[50px]">
-        <div className="relative w-full h-[400px] rounded-lg">
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
           <Image src="/hero.png" fill alt="" className="object-cover" />
         </div>
-        <div className="relative w-full h-[400px] rounded-lg">
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
           <Image src="/p1.png" fill alt="" className="object-cover" />
         </div>
-        <div className="relative w-full h-[400px] rounded-lg">
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
           <Image src="/p2.png" fill alt="" className="object-cover" />
         </div>
-        <div className="relative w-full h-[400px] rounded-lg">
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
           <Image src="/p3.png" fill alt="" className="object-cover" />
         </div>
-        <div className="relative w-full h-[400px] rounded-lg">
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
           <Image src="/hero.png" fill alt="" className="object-cover" />
         </div>
-        <div className="relative w-full h-[400px] rounded-lg">
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
           <Image src="/p1.png" fill alt="" className="object-cover" />
         </div>
-        <div className="relative w-full h-[400px] rounded-lg">
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
           <Image src="/p2.png" fill alt="" className="object-cover" />
         </div>
         <div className="relative w-full h-[400px] rounded-lg">
