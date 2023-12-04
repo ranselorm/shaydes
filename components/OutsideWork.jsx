@@ -4,10 +4,16 @@ import Button from "./ui/Button";
 import { AiOutlineBuild } from "react-icons/ai";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Slider from "react-slick";
+import ReactPlayer from "react-player";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const OutsideWork = () => {
+  const videos = [
+    "https://youtube.com/shorts/izHVaeQzvQ4?si=BXVphq37xNpCoZc7",
+    "https://youtube.com/shorts/izHVaeQzvQ4?si=BXVphq37xNpCoZc7",
+    "https://youtube.com/shorts/izHVaeQzvQ4?si=BXVphq37xNpCoZc7",
+  ];
   const settings = {
     dots: false,
     centerMode: true,
@@ -16,6 +22,32 @@ const OutsideWork = () => {
     centerPadding: "1px",
     slidesToShow: 2,
     slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <section className="mt-[150px]">
