@@ -41,7 +41,7 @@ const OutsideWork = () => {
     ],
   };
   return (
-    <section className="mt-[150px]">
+    <section className="mt-[80px] lg:mt-[150px]">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-x-4">
           <div>

@@ -9,7 +9,7 @@ const footerLinks = [
 ];
 const Footer = () => {
   return (
-    <footer className="mt-[150px]">
+    <footer className="mt-[80px] lg:mt-[150px]">
       <div className="flex justify-center mb-12">
         <Image src="/lg.png" width={100} height={100} alt="logo" />
       </div>

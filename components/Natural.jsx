@@ -47,7 +47,7 @@ const Natural = () => {
     ],
   };
   return (
-    <section className="mt-[150px]">
+    <section className="mt-[80px] lg:mt-[150px]">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-x-4">
           <div className=" w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-gray-300 rounded-lg flex justify-center items-center">

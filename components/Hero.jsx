@@ -4,7 +4,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section>
-      <div className="flex justify-center flex-col items-center gap-y-6">
+      <div className="flex justify-center flex-col items-left lg:items-center gap-y-6 pt-12">
         <div>
           <Image src="/lg.png" width={100} height={100} alt="logo" />
         </div>
