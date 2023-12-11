@@ -19,7 +19,7 @@ const Hero = () => {
           </p>
         </article>
         <div className="relative w-full h-[200px] lg:h-[600px] rounded-xl lg:rounded-[20px] overflow-hidden">
-          <Image src="/hero.png" alt="" fill className="object-cover" />
+          <Image src="/main.jpg" alt="" fill className="object-cover" />
         </div>
       </div>
     </section>
