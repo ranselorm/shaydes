@@ -4,18 +4,6 @@ import { useEffect } from "react";
 import { CiCircleCheck } from "react-icons/ci";
 
 const Card = ({ id, title, price, features }) => {
-  //   console.log({ id, title, price, features });
-  //   const router = useRouter();
-  //   useEffect(() => {
-  //     const handleCardClick = () => {
-  //       localStorage.setItem(
-  //         "selectedCard",
-  //         JSON.stringify({ id, title, price, features })
-  //       );
-  //       router.push("/bookings");
-  //     };
-  //     handleCardClick();
-  //   }, []);
   return (
     <div
       className="border border-[#8d8a8a] hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 py-7 transform hover:-translate-y-2 transition-all duration-300 group bg-custom-radial cursor-pointer"

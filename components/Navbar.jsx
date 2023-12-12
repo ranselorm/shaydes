@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-center">
       <div>
-        <Image src="/lg.png" width={100} height={100} alt="logo" />
+        <Image src="/lg.png" width={80} height={100} alt="logo" />
       </div>
     </nav>
   );

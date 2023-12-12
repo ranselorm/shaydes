@@ -12,12 +12,13 @@ const Booking = () => {
     dateRange: [null, null],
   });
 
-  console.log(
-    formValues.fullname,
-    formValues.location,
-    formValues.dateRange,
-    formValues.numberOfPersons
-  );
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fullname = formValues.fullname;
+  const location = formValues.location;
+  const date = formValues.dateRange;
+  const persons = formValues.numberOfPersons;
 
   const handleInputChange = (name, value) => {
     setFormValues((prevValues) => ({
@@ -26,12 +27,26 @@ const Booking = () => {
     }));
   };
 
-  const handleFormSubmit = (e) => e.preventDefault();
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    if (!fullname || !location || !date[0] || !date[1] || !persons) {
+      alert("All fields are required!");
+      setIsLoading(false);
+      return;
+    }
+    handleInputChange("fullname", "");
+    handleInputChange("location", "");
+    handleInputChange("numberOfPersons", "");
+    handleInputChange("dateRange", [null, null]);
+    setIsLoading(false);
+  };
 
+  // isLoading ? console.log("WE ARE LOADING") : console.log("NOT YET LOADING");
   return (
-    <div className="h-screen">
-      <div className="flex justify-center items-center gap-x-10">
-        <div className="px-2 w-5/12">
+    <div className="h-screen md:mt-[60px]">
+      <div className="flex justify-center items-center gap-x-10 flex-col gap-y-8 lg:flex-row">
+        <div className="w-full lg:w-5/12">
           <h2 className="text-[30px] font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
@@ -42,7 +57,7 @@ const Booking = () => {
           <p>Lorem ipsum dolor sit amet consectetur </p>
         </div>
         <form
-          className="w-4/12 bg-white text-black flex flex-col gap-y-6 px-8 pt-[50px] rounded-xl h-[500px]"
+          className="w-full lg:w-4/12 bg-white text-black flex flex-col gap-y-6 px-8 pt-[50px] rounded-xl h-[500px]"
           onSubmit={handleFormSubmit}
         >
           <div className="flex flex-col gap-y-2">
@@ -91,13 +106,14 @@ const Booking = () => {
           </div>
           <div>
             <p className="flex justify-between font-black">
-              Total <span>$0</span>
+              Total <span>₵0</span>
             </p>
           </div>
 
           <button
             type="submit"
             className="bg px-7 py-2 text-white bg-black hover:text-white transition-all duration-300 rounded-full uppercase"
+            disabled={isLoading}
           >
             Proceed
           </button>
