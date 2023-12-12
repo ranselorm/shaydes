@@ -1,17 +1,18 @@
-import Hero from "@/components/Hero";
-import Bridal from "@/components/Bridal";
-import NonBridal from "@/components/NonBridal";
-import OutsideWork from "@/components/OutsideWork";
-import Footer from "@/components/Footer";
+import React from "react";
+import Hero from "../components/Hero";
+import Bridal from "../components/Bridal";
+import NonBridal from "../components/NonBridal";
+import OutsideWork from "../components/OutsideWork";
+import RateCard from "../components/RateCard";
 
 export default function Home() {
   return (
     <div>
-      <Hero />
+      {/* <Hero />
       <Bridal />
       <NonBridal />
-      <OutsideWork />
-      <Footer />
+      <OutsideWork /> */}
+      <RateCard />
     </div>
   );
 }

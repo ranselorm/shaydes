@@ -60,16 +60,16 @@ const OutsideWork = () => {
       </div>
       <Slider {...settings} className="mt-[50px]">
         <div className="relative w-[200px] h-[440px] rounded-lg overflow-hidden">
-          <Image src="/hero.png" fill alt="" className="object-cover" />
+          <Image src="/c1.jpg" fill alt="" className="object-cover" />
         </div>
         <div className="relative w-[200px] h-[440px] rounded-lg overflow-hidden">
-          <Image src="/p1.png" fill alt="" className="object-cover" />
+          <Image src="/c2.jpg" fill alt="" className="object-cover" />
         </div>
         <div className="relative w-[200px] h-[440px] rounded-lg overflow-hidden">
-          <Image src="/p2.png" fill alt="" className="object-cover" />
+          <Image src="/c3.jpg" fill alt="" className="object-cover" />
         </div>
         <div className="relative w-[200px] h-[440px] rounded-lg overflow-hidden">
-          <Image src="/p3.png" fill alt="" className="object-cover" />
+          <Image src="/n3.jpg" fill alt="" className="object-cover" />
         </div>
       </Slider>
     </section>
