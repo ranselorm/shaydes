@@ -1,10 +1,15 @@
 "use client";
+// import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { DateRangePicker } from "rsuite";
 import "rsuite/dist/rsuite-rtl.css";
+import CardData from "../../../CardData";
+import { CiCircleCheck } from "react-icons/ci";
 
 const Booking = () => {
+  const { id } = useParams();
+
   const [formValues, setFormValues] = useState({
     fullname: "",
     location: "",
@@ -42,22 +47,28 @@ const Booking = () => {
     setIsLoading(false);
   };
 
+  const card = CardData.find((card) => card.id === id);
+  console.log("In booking", card);
+
   // isLoading ? console.log("WE ARE LOADING") : console.log("NOT YET LOADING");
   return (
-    <div className="h-screen md:mt-[60px]">
+    <div className="h-screen md:mt-[60px] mb-[220px] lg:mb-0">
       <div className="flex justify-center items-center gap-x-10 flex-col gap-y-8 lg:flex-row">
         <div className="w-full lg:w-5/12">
-          <h2 className="text-[30px] font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h2>
-          <p>Lorem ipsum dolor sit amet consectetur </p>
-          <p>Lorem ipsum dolor sit amet consectetur </p>
-          <p>Lorem ipsum dolor sit amet consectetur </p>
-          <p>Lorem ipsum dolor sit amet consectetur </p>
-          <p>Lorem ipsum dolor sit amet consectetur </p>
+          <h2 className="text-[30px] font-bold">{card.title}</h2>
+          {card.features.map((item, index) => (
+            <div key={index}>
+              <p className="text-[13px] flex gap-1 items-center my-3">
+                <span>
+                  <CiCircleCheck />
+                </span>
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
         <form
-          className="w-full lg:w-4/12 bg-white text-black flex flex-col gap-y-6 px-8 pt-[50px] rounded-xl h-[500px]"
+          className="w-full lg:w-4/12 bg-white text-black flex flex-col gap-y-6 px-8 pt-[50px] rounded-xl pb-[30px]"
           onSubmit={handleFormSubmit}
         >
           <div className="flex flex-col gap-y-2">
@@ -106,7 +117,7 @@ const Booking = () => {
           </div>
           <div>
             <p className="flex justify-between font-black">
-              Total <span>₵0</span>
+              Total <span>₵{card.price}</span>
             </p>
           </div>
 

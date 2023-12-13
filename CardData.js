@@ -1,6 +1,6 @@
 const CardData = [
   {
-    id: 1,
+    id: "1",
     title: "Traditional | White Wedding",
     price: 800,
     features: [
@@ -22,7 +22,7 @@ const CardData = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     title: "Civil Wedding & Reception",
     price: 1100,
     features: [
@@ -44,7 +44,7 @@ const CardData = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     title: "Traditional & Civil Wedding",
     price: 1200,
     features: [
@@ -66,7 +66,7 @@ const CardData = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     title: "Wedding & Reception",
     price: 1300,
     features: [
@@ -88,7 +88,7 @@ const CardData = [
     ],
   },
   {
-    id: 5,
+    id: "5",
     title: "Traditional & White Wedding",
     price: 1450,
     features: [
@@ -111,7 +111,7 @@ const CardData = [
   },
 
   {
-    id: 6,
+    id: "6",
     title: "Wedding & Reception",
     price: 2000,
     features: [

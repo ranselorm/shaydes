@@ -1,9 +1,13 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { CiCircleCheck } from "react-icons/ci";
+import CardData from "../CardData";
 
 const Card = ({ id, title, price, features }) => {
+  // console.log(card);
+
   return (
     <div
       className="border border-[#8d8a8a] hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 py-7 transform hover:-translate-y-2 transition-all duration-300 group bg-custom-radial cursor-pointer"
@@ -28,9 +32,11 @@ const Card = ({ id, title, price, features }) => {
             </p>
           </div>
         ))}
-        <button className="bg-[#8d8a8a] group-hover:bg-[#CFB53B] w-full rounded-md py-2 text-sm">
-          Book Now
-        </button>
+        <Link href={`/booking/${id}`} passHref>
+          <button className="bg-[#8d8a8a] group-hover:bg-[#CFB53B] w-full rounded-md py-2 text-sm">
+            Book Now
+          </button>
+        </Link>
         <p className="text-[10px] text-[#8d8a8a] mt-2 text-center">
           TNT not included!
         </p>
