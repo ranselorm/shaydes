@@ -8,10 +8,10 @@ import RateCard from "../components/RateCard";
 export default function Home() {
   return (
     <div>
-      {/* <Hero />
+      <Hero />
       <Bridal />
       <NonBridal />
-      <OutsideWork /> */}
+      <OutsideWork />
       <RateCard />
     </div>
   );
