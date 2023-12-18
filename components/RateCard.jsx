@@ -9,22 +9,39 @@ const RateCard = () => {
         <div className="bg-[#CFB53B] bg-opacity-25 border border-[#CFB53B] border-opacity-25 px-4 py-1 rounded-full text-[13px] mb-5 w-max mx-auto">
           Pricing
         </div>
-        <h2 className="font-semibold  text-[16px] lg:text-[30px] lg:leading-[40px] mb-3">
-          Choose the plan that fits your needs
-        </h2>
-        <p className="text-[#8d8a8a] text-[14px] md:text-[16px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <div className="">
+          <h2 className="font-semibold  text-[16px] lg:text-[30px] lg:leading-[40px] mb-3">
+            Choose the plan <br className="hidden lg:flex" />
+            that fits your needs
+          </h2>
+          <p className="text-[#8d8a8a] text-[14px] md:text-[16px]">
+            Congratulations and welcome to being A 54SHADES BRIDE #54SB
+          </p>
+        </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-6 md:px-12 px-0">
-        {CardData.map((card) => (
-          <Card
-            title={card.title}
-            price={card.price}
-            features={card.features}
-            key={card.id}
-            id={card.id}
-          />
+      <div className="flex md:items-center flex-col justify-center gap-12 md:px-12 px-0">
+        {CardData.map((item) => (
+          <div key={item.name}>
+            <h4 className="my-6 font-semibold text-[16px] md:text-[18px]">
+              {item.name}
+            </h4>
+            <div className="flex flex-wrap md:flex-row flex-col justify-center gap-12">
+              {item.category.map((card) => (
+                <Card
+                  title={card.title}
+                  subtitle={card.subtitle}
+                  price={card.price}
+                  features={card.features}
+                  key={card.id}
+                  id={card.id}
+                  looks={card.looks}
+                  days={card.days}
+                  looksPrice={card.looksPrice}
+                  daysPrice={card.daysPrice}
+                />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>

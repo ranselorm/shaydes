@@ -66,9 +66,6 @@ const Bridal = () => {
         <div className="flex items-center gap-x-4">
           <div>
             <h3 className="font-semibold text-[16px] md:text-[22px]">Bridal</h3>
-            {/* <p className="text-[#8d8a8a] text-[12px] md:text-[16px]">
-              Thirdstride · Landing page design
-            </p> */}
           </div>
         </div>
         <div>
