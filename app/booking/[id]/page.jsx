@@ -14,6 +14,7 @@ const Booking = () => {
 
   const [formValues, setFormValues] = useState({
     fullname: "",
+    phone: "",
     location: "",
     numberOfPersons: "",
     dateRange: [null, null],
@@ -23,9 +24,9 @@ const Booking = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const fullname = formValues.fullname;
+  const phone = formValues.phone;
   const location = formValues.location;
   const date = formValues.dateRange;
-  const persons = formValues.numberOfPersons;
 
   const handleInputChange = (name, value) => {
     setFormValues((prevValues) => ({
@@ -37,14 +38,14 @@ const Booking = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    if (!fullname || !location || !date[0] || !date[1] || !persons) {
+    if (!fullname || !phone || !location || !date[0] || !date[1]) {
       alert("All fields are required!");
       setIsLoading(false);
       return;
     }
     handleInputChange("fullname", "");
+    handleInputChange("phone", "");
     handleInputChange("location", "");
-    handleInputChange("numberOfPersons", "");
     handleInputChange("dateRange", [null, null]);
     setIsLoading(false);
   };
@@ -60,12 +61,9 @@ const Booking = () => {
   };
 
   const card = findItemById(id);
-  // console.log(card);
-
-  // isLoading ? console.log("WE ARE LOADING") : console.log("NOT YET LOADING");
   return (
     <div className="h-screen md:mt-[60px] mb-[220px] lg:mb-0">
-      <div className="flex justify-center items-center gap-x-10 flex-col gap-y-8 lg:flex-row">
+      <div className="flex justify-center items-center gap-x-[100px] flex-col gap-y-8 lg:flex-row">
         <div
           className="border border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-6  transition-all duration-300 bg-custom-radial"
           onClick={() => {}}
@@ -81,8 +79,8 @@ const Booking = () => {
             <p className="text-[12px] text-[#b8b5b5]">{card.subtitle}</p>
 
             {card.looks ? (
-              <div className="h-10 mt-8 flex gap-4">
-                <button className="bg-green-300 px-3 rounded-full text-black text-[12px] gap-3 flex cards-center">
+              <div className="h-10 mt-8 flex items-center gap-4">
+                <button className="bg-green-300 px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
                   <IoIosPeople className="text-[20px]" />
                   <p className="flex flex-col">
                     <span>{card.looks} Looks</span>
@@ -92,7 +90,7 @@ const Booking = () => {
                   </p>
                 </button>
                 {card.days && (
-                  <button className="bg-blue-300 px-3 rounded-full text-black text-[12px] gap-3 flex cards-center">
+                  <button className="bg-blue-300 px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
                     <MdDateRange className="text-[20px]" />
                     <p className="flex flex-col">
                       <span>{card.days} Days</span>
@@ -119,24 +117,13 @@ const Booking = () => {
                 </div>
               ))}
             </div>
-            {/* <Link href={`/booking/${id}`} passHref>
-              <button
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to bottom, #FAC97A, #E9BF5C)",
-                }}
-                className="w-full rounded-md py-2 text-sm text-black font-bold"
-              >
-                Book Now
-              </button>
-            </Link> */}
             <p className="text-[10px] text-[#8d8a8a] mt-2 text-center">
               TNT not included!
             </p>
           </article>
         </div>
         <form
-          className="w-full lg:w-4/12 bg-white text-black flex flex-col gap-y-6 px-8 pt-[50px] rounded-xl pb-[30px]"
+          className="w-full lg:w-4/12 bg-white text-black flex flex-col gap-y-4 px-8 pt-[20px] rounded-xl pb-[30px]"
           onSubmit={handleFormSubmit}
         >
           <div className="flex flex-col gap-y-2">
@@ -144,57 +131,67 @@ const Booking = () => {
               Full Name
             </label>
             <input
-              className="py-[6.5px] px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all"
+              className="py-[6.5px] px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
               onChange={(e) => handleInputChange("fullname", e.target.value)}
               value={formValues.fullname}
+              placeholder="e.g. Matilda Brown"
               required
             />
+            <p className="text-gray-500 text-[12px]">
+              Name of the person booking
+            </p>
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <label htmlFor="phone" className="font-bold">
+              Phone Number
+            </label>
+            <input
+              className="py-[6.5px] px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
+              onChange={(e) => handleInputChange("phone", e.target.value)}
+              value={formValues.phone}
+              placeholder="e.g. 024 000 0000"
+              required
+            />
+            <p className="text-gray-500 text-[12px]">
+              Phone number to reach out to
+            </p>
           </div>
 
           <div className="flex flex-col gap-y-2">
-            <label htmlFor="location">Location</label>
+            <label htmlFor="location" className="font-bold">
+              Location
+            </label>
             <input
-              className="py-[6.5px] px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all"
+              className="py-[6.5px] px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
               onChange={(e) => handleInputChange("location", e.target.value)}
+              placeholder="e.g La Amour Event Garden, Accra"
               value={formValues.location}
               required
             />
+            <p className="text-gray-500 text-[12px]">Location of the event</p>
           </div>
           <div className="flex flex-col gap-y-2">
-            <label htmlFor="date">Date</label>
+            <label htmlFor="date" className="font-bold">
+              Event Date
+            </label>
             <DateRangePicker
-              placeholder=""
+              placeholder="e.g. 15 Dec 2023"
               showOneCalendar
               value={formValues.dateRange}
               onChange={(range) => handleInputChange("dateRange", range)}
               required
             />
+            <p className="text-gray-500 text-[12px]">Day of event</p>
           </div>
-
-          <div className="flex flex-col gap-y-2">
-            <label htmlFor="numberOfPersons">Number of Persons</label>
-            <input
-              type="text"
-              className="py-[6.5px] px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all"
-              onChange={(e) =>
-                handleInputChange("numberOfPersons", e.target.value)
-              }
-              value={formValues.numberOfPersons}
-              required
-            />
-          </div>
-          <div>
-            <p className="flex justify-between font-black">
-              Total <span>₵{card.price}</span>
-            </p>
-          </div>
-
           <button
             type="submit"
-            className="bg px-7 py-2 text-white bg-black hover:text-white transition-all duration-300 rounded-full uppercase"
+            className=" mt-10 py-2 text-black rounded-lg"
+            style={{
+              backgroundImage: "linear-gradient(to bottom, #FAC97A, #E9BF5C)",
+            }}
             disabled={isLoading}
           >
-            Proceed
+            Submit!
           </button>
         </form>
       </div>
