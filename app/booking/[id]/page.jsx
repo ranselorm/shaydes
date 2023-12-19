@@ -70,7 +70,7 @@ const Booking = () => {
         <p className="mt-4 text-[30px]"> Almost there🥳!</p>
       </article>
       <div className="flex justify-center items-start gap-x-[100px] flex-col gap-y-8 lg:flex-row">
-        <div className="border border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-6 -mt-6 transition-all duration-300 bg-custom-radial">
+        <div className="border border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-6 transition-all duration-300 bg-custom-radial">
           <article className="">
             <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] border-[#CFB53B]">
               {card.title}
