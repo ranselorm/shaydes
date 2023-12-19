@@ -59,15 +59,18 @@ const Booking = () => {
     }
     return null;
   };
-
   const card = findItemById(id);
+
   return (
     <div className="h-screen md:mt-[60px] mb-[220px] lg:mb-0">
-      <div className="flex justify-center items-center gap-x-[100px] flex-col gap-y-8 lg:flex-row">
-        <div
-          className="border border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-6  transition-all duration-300 bg-custom-radial"
-          onClick={() => {}}
-        >
+      <article className="mx-auto text-center mb-[80px] -mt-10">
+        <button className="bg-black bg-opacity-25 border border-[#CFB53B] border-opacity-25 px-7 py-2 hover:bg-inherit transition rounded-full">
+          Book Now
+        </button>
+        <p className="mt-4 text-[30px]"> Almost there🥳!</p>
+      </article>
+      <div className="flex justify-center items-start gap-x-[100px] flex-col gap-y-8 lg:flex-row">
+        <div className="border border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-6 -mt-6 transition-all duration-300 bg-custom-radial">
           <article className="">
             <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] border-[#CFB53B]">
               {card.title}
@@ -80,7 +83,7 @@ const Booking = () => {
 
             {card.looks ? (
               <div className="h-10 mt-8 flex items-center gap-4">
-                <button className="bg-green-300 px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
+                <button className="bg-[#6DD400] px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
                   <IoIosPeople className="text-[20px]" />
                   <p className="flex flex-col">
                     <span>{card.looks} Looks</span>
@@ -90,7 +93,7 @@ const Booking = () => {
                   </p>
                 </button>
                 {card.days && (
-                  <button className="bg-blue-300 px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
+                  <button className="bg-[#00D48E] px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
                     <MdDateRange className="text-[20px]" />
                     <p className="flex flex-col">
                       <span>{card.days} Days</span>

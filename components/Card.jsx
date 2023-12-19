@@ -35,7 +35,7 @@ const Card = ({
 
         {looks ? (
           <div className="h-10 mt-5 flex gap-4">
-            <button className="bg-green-300 px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
+            <button className="bg-[#6DD400] px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
               <IoIosPeople className="text-[20px]" />
               <p className="flex flex-col">
                 <span>{looks} Looks</span>
@@ -43,7 +43,7 @@ const Card = ({
               </p>
             </button>
             {days && (
-              <button className="bg-blue-300 px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
+              <button className="bg-[#00D48E] px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
                 <MdDateRange className="text-[20px]" />
                 <p className="flex flex-col">
                   <span>{days} Days</span>
@@ -55,7 +55,6 @@ const Card = ({
         ) : (
           <div className="h-10 mt-5" />
         )}
-
         <div className="mt-[30px]">
           {features.map((item, index) => (
             <div key={index}>

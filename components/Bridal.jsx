@@ -79,7 +79,7 @@ const Bridal = () => {
             className="bg-gray-200 w-[200px] h-[440px] rounded-lg relative"
             key={index}
           >
-            <div className="relative w-4/5 h-[400px] mx-auto top-[50px] rounded-lg overflow-hidden">
+            <div className="relative w-4/5 h-[350px] lg:h-[400px] mx-auto top-[50px] rounded-lg overflow-hidden">
               <Image src={item.img} fill alt="" className="object-cover" />
             </div>
             <div className="bg-black absolute z-50 inset-0 opacity-0 hover:opacity-75 transition-all duration-300 flex items-center justify-center">

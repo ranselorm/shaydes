@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "../components/Hero";
 import Bridal from "../components/Bridal";
 import NonBridal from "../components/NonBridal";
