@@ -48,12 +48,12 @@ const ImageGallery = () => {
       <h3 className="ml-[100px] font-bold text-[22px] mb-[20px]">
         {foundItem.name}
       </h3>
-      <div className="flex flex-wrap justify-center gap-4 px-[50px]">
+      <div className="flex flex-wrap justify-center gap-4 px-0 lg:px-[50px]">
         {imagePaths.map((src, index) => (
           <div
             key={src}
             onClick={() => openLightbox(index)}
-            className="h-[250px] w-[250px] overflow-hidden rounded-lg"
+            className="h-[250px] w-full md:w-[250px] overflow-hidden rounded-lg"
           >
             <img
               src={src}

@@ -19,11 +19,11 @@ const Card = ({
 
   return (
     <div
-      className="border hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transform hover:-translate-y-2 transition-all duration-300 group bg-custom-radial cursor-pointer bg-red-400"
+      className="border border-gray-300 hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transition-all duration-300 group bg-custom-radial cursor-pointer group"
       onClick={() => {}}
     >
       <article className="">
-        <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] hover:border-[#CFB53B]">
+        <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] group-hover:border-[#CFB53B]">
           {title}
         </h4>
         <p className=" mt-3 text-[25px]">
@@ -68,12 +68,7 @@ const Card = ({
           ))}
         </div>
         <Link href={`/booking/${id}`} passHref>
-          <button
-            style={{
-              backgroundImage: "linear-gradient(to bottom, #FAC97A, #E9BF5C)",
-            }}
-            className="w-full rounded-md py-2 text-sm text-black font-bold"
-          >
+          <button className="w-full rounded-md py-2 text-sm text-black font-bold group-hover:bg-btn-gradient bg-gray-300">
             Book Now
           </button>
         </Link>

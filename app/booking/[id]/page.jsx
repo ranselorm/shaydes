@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { DateRangePicker } from "rsuite";
 import "rsuite/dist/rsuite-rtl.css";
-import CardData from "../../../CardData";
+import { cardData } from "../../../data";
 import { CiCircleCheck } from "react-icons/ci";
 import { IoIosPeople } from "react-icons/io";
 import { MdDateRange } from "react-icons/md";
@@ -51,14 +51,17 @@ const Booking = () => {
   };
 
   const findItemById = (id) => {
-    for (const card of CardData) {
-      const found = card.category.find((item) => item.id === id);
-      if (found) {
-        return found;
+    for (const card of cardData) {
+      for (const category of card.categories) {
+        const found = category.options.find((item) => item.id === id);
+        if (found) {
+          return found;
+        }
       }
     }
     return null;
   };
+
   const card = findItemById(id);
 
   return (
@@ -83,22 +86,22 @@ const Booking = () => {
 
             {card.looks ? (
               <div className="h-10 mt-8 flex items-center gap-4">
-                <button className="bg-[#6DD400] px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
+                <button className="bg-[#6DD400] px-3 py-2 rounded-full text-black text-[12px] gap-3 flex items-center">
                   <IoIosPeople className="text-[20px]" />
                   <p className="flex flex-col">
                     <span>{card.looks} Looks</span>
                     <span className="text-[10px] font-bold">
-                      + ₵{card.looksPrice}
+                      {/* + ₵{card.looksPrice} */}
                     </span>
                   </p>
                 </button>
                 {card.days && (
-                  <button className="bg-[#00D48E] px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
+                  <button className="bg-[#00D48E] px-3 py-2 rounded-full text-black text-[12px] gap-3 flex items-center">
                     <MdDateRange className="text-[20px]" />
                     <p className="flex flex-col">
                       <span>{card.days} Days</span>
                       <span className="text-[10px] font-bold">
-                        + ₵{card.daysPrice}
+                        {/* + ₵{card.daysPrice} */}
                       </span>
                     </p>
                   </button>
