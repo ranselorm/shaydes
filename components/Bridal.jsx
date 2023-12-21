@@ -1,30 +1,12 @@
 "use client";
 import Image from "next/image";
 import Button from "./ui/Button";
-import { AiOutlineBuild } from "react-icons/ai";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const sliderItems = [
-  {
-    name: "Traditional",
-    img: "/trad.jpg",
-  },
-  {
-    name: "White Wedding",
-    img: "/wed.jpg",
-  },
-  {
-    name: "Civil Princess",
-    img: "/civil.jpg",
-  },
-  {
-    name: "Reception",
-    img: "/reception.jpg",
-  },
-];
+import Link from "next/link";
+import { bridalItems } from "../data";
 
 const Bridal = () => {
   const settings = {
@@ -74,17 +56,19 @@ const Bridal = () => {
         </div>
       </div>
       <Slider {...settings} className="mt-[50px]">
-        {sliderItems.map((item, index) => (
+        {bridalItems.map(({ id, name, img }) => (
           <div
             className="bg-gray-200 w-[200px] h-[440px] rounded-lg relative"
-            key={index}
+            key={id}
           >
-            <div className="relative w-4/5 h-[350px] lg:h-[400px] mx-auto top-[50px] rounded-lg overflow-hidden">
-              <Image src={item.img} fill alt="" className="object-cover" />
+            <div className="relative w-full h-full rounded-lg overflow-hidden">
+              <Image src={img} fill alt="" className="object-contain" />
             </div>
-            <div className="bg-black absolute z-50 inset-0 opacity-0 hover:opacity-75 transition-all duration-300 flex items-center justify-center">
-              <p className="text-bold text-[20px]">{item.name}</p>
-            </div>
+            <Link href={`/bridal/${id}`}>
+              <div className="bg-black absolute z-50 inset-0 opacity-0 hover:opacity-75 transition-all duration-300 flex items-center justify-center cursor-pointer">
+                <p className="text-bold text-[20px]">{name}</p>
+              </div>
+            </Link>
           </div>
         ))}
       </Slider>

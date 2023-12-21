@@ -19,11 +19,11 @@ const Card = ({
 
   return (
     <div
-      className="border border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transform hover:-translate-y-2 transition-all duration-300 group bg-custom-radial cursor-pointer bg-red-400"
+      className="border hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transform hover:-translate-y-2 transition-all duration-300 group bg-custom-radial cursor-pointer bg-red-400"
       onClick={() => {}}
     >
       <article className="">
-        <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] border-[#CFB53B]">
+        <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] hover:border-[#CFB53B]">
           {title}
         </h4>
         <p className=" mt-3 text-[25px]">
@@ -39,7 +39,7 @@ const Card = ({
               <IoIosPeople className="text-[20px]" />
               <p className="flex flex-col">
                 <span>{looks} Looks</span>
-                <span className="text-[10px] font-bold">+ ₵{looksPrice}</span>
+                {/* <span className="text-[10px] font-bold">+ ₵{looksPrice}</span> */}
               </p>
             </button>
             {days && (
@@ -47,7 +47,7 @@ const Card = ({
                 <MdDateRange className="text-[20px]" />
                 <p className="flex flex-col">
                   <span>{days} Days</span>
-                  <span className="text-[10px] font-bold">+ ₵{daysPrice}</span>
+                  {/* <span className="text-[10px] font-bold">+ ₵{daysPrice}</span> */}
                 </p>
               </button>
             )}

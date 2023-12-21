@@ -34,15 +34,10 @@ const sliderItems = [
 const NonBridal = () => {
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    autoplay: true,
-    speed: 6000,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1024,
@@ -78,9 +73,6 @@ const NonBridal = () => {
             <h3 className="font-semibold text-[16px] md:text-[22px]">
               Non Bridal
             </h3>
-            {/* <p className="text-[#8d8a8a] text-[12px] md:text-[16px]">
-              Natural Space · Brand Design · Photography
-            </p> */}
           </article>
         </div>
         <div>

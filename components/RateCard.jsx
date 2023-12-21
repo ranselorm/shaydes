@@ -1,7 +1,7 @@
+"use client";
 import Link from "next/link";
 import Card from "../components/Card";
-import CardData from "../CardData";
-
+import { cardData } from "../data";
 const RateCard = () => {
   return (
     <section className="mt-[80px] lg:mt-[150px]" id="rateCardSection">
@@ -20,13 +20,37 @@ const RateCard = () => {
         </div>
       </div>
       <div className="flex md:items-center flex-col justify-center gap-12 md:px-12 px-0">
-        {CardData.map((item) => (
+        {cardData.map((item) => (
           <div key={item.name}>
-            <h4 className="my-6 font-semibold text-[16px] md:text-[18px]">
+            <h4 className="my-6 font-semibold text-[20px] md:text-[18px] flex flex-col">
               {item.name}
             </h4>
+            <div className="">
+              {item.categories.map((data) => (
+                <div>
+                  <p className="mb-2 mt-12 font-bold text-[18px]">
+                    {data.name}
+                  </p>
+                  <div className="flex flex-wrap justify-start gap-4">
+                    {data.options.map((data) => (
+                      <Card {...data} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* <div className="flex flex-wrap md:flex-row flex-col justify-center gap-12">
+           
+            </div> */}
             <div className="flex flex-wrap md:flex-row flex-col justify-center gap-12">
-              {item.category.map((card) => (
+              {/* {item.categories.map((data) => (
+                <div key={data.name}>
+                  {data.options.map((data) => (
+                    <Card key={data.id} {...data} />
+                  ))}
+                </div>
+              ))} */}
+              {/* {item.category.map((card) => (
                 <Card
                   title={card.title}
                   subtitle={card.subtitle}
@@ -39,7 +63,7 @@ const RateCard = () => {
                   looksPrice={card.looksPrice}
                   daysPrice={card.daysPrice}
                 />
-              ))}
+              ))} */}
             </div>
           </div>
         ))}
