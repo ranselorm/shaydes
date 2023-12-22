@@ -1,54 +1,27 @@
 "use client";
 // import { useRouter } from "next/router";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { useState } from "react";
 import { DateRangePicker } from "rsuite";
-import "rsuite/dist/rsuite-rtl.css";
 import { cardData } from "../../../data";
 import { CiCircleCheck } from "react-icons/ci";
 import { IoIosPeople } from "react-icons/io";
 import { MdDateRange } from "react-icons/md";
+import { ref, set, push } from "firebase/database";
+import { database } from "../../../firebase";
+import "rsuite/dist/rsuite-rtl.css";
+import { Router } from "next/router";
 
 const Booking = () => {
+  const router = useRouter();
   const { id } = useParams();
-
   const [formValues, setFormValues] = useState({
     fullname: "",
     phone: "",
     location: "",
-    numberOfPersons: "",
-    dateRange: [null, null],
+    dateRange: [new Date(), new Date()],
   });
-
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  const fullname = formValues.fullname;
-  const phone = formValues.phone;
-  const location = formValues.location;
-  const date = formValues.dateRange;
-
-  const handleInputChange = (name, value) => {
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    if (!fullname || !phone || !location || !date[0] || !date[1]) {
-      alert("All fields are required!");
-      setIsLoading(false);
-      return;
-    }
-    handleInputChange("fullname", "");
-    handleInputChange("phone", "");
-    handleInputChange("location", "");
-    handleInputChange("dateRange", [null, null]);
-    setIsLoading(false);
-  };
 
   const findItemById = (id) => {
     for (const card of cardData) {
@@ -63,6 +36,94 @@ const Booking = () => {
   };
 
   const card = findItemById(id);
+  // console.log(card);
+
+  const handleInputChange = (name, value) => {
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  const formatDateRange = (dates) => {
+    // Define arrays of weekday and month names
+    const weekdays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    return dates.map((date) => {
+      const dayOfWeek = weekdays[date.getDay()];
+      const month = months[date.getMonth()];
+      const dayOfMonth = date.getDate();
+      const year = date.getFullYear();
+      return `${dayOfWeek} ${month} ${dayOfMonth} ${year}`;
+    });
+  };
+
+  const writeUserData = async (userData) => {
+    const bookingsRef = ref(database, "bookings");
+    const newBookingRef = push(bookingsRef);
+    await set(newBookingRef, userData);
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    // Ensure all fields are filled out
+    const { fullname, phone, location, dateRange } = formValues;
+    if (!fullname || !phone || !location || dateRange.some((date) => !date)) {
+      alert("All fields are required!");
+      setIsLoading(false);
+      return;
+    }
+
+    const formattedDates = formatDateRange(dateRange);
+    const userData = {
+      fullname,
+      phone,
+      location,
+      dates: formattedDates,
+      cardDetails: card,
+    };
+
+    try {
+      await writeUserData(userData);
+      setFormValues({
+        fullname: "",
+        phone: "",
+        location: "",
+        dateRange: [new Date(), new Date()],
+      });
+      router.push("/success");
+
+      console.log("Booking successful:", userData);
+    } catch (error) {
+      console.error("Error writing booking to database", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="h-screen md:mt-[60px] mb-[220px] lg:mb-0">
@@ -181,8 +242,9 @@ const Booking = () => {
               Event Date
             </label>
             <DateRangePicker
-              placeholder="e.g. 15 Dec 2023"
               showOneCalendar
+              placeholder="e.g. 15 Dec 2023"
+              // format="mm/dd/yyyy"
               value={formValues.dateRange}
               onChange={(range) => handleInputChange("dateRange", range)}
               required

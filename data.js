@@ -112,8 +112,8 @@ export const cardData = [
             subtitle: "The best option for 2 different events",
             looks: 2,
             days: 2,
-            looksPrice: 200,
-            daysPrice: 50,
+            // looksPrice: 200,
+            // daysPrice: 50,
             price: 1100,
             features: [
               {
@@ -136,8 +136,8 @@ export const cardData = [
             subtitle: "The best option for 2 different events",
             looks: 2,
             days: 2,
-            looksPrice: 200,
-            daysPrice: 100,
+            // looksPrice: 200,
+            // daysPrice: 100,
             price: 1200,
             features: [
               {
@@ -160,8 +160,8 @@ export const cardData = [
             subtitle: "The best option for 2 different events",
             looks: 2,
             // days: 2,
-            looksPrice: 200,
-            daysPrice: 100,
+            // looksPrice: 200,
+            // daysPrice: 100,
             price: 1300,
             features: [
               {
@@ -206,8 +206,8 @@ export const cardData = [
             subtitle: "The best option for 2 different events",
             looks: 2,
             days: 2,
-            looksPrice: 200,
-            daysPrice: 150,
+            // looksPrice: 200,
+            // daysPrice: 150,
             price: 1500,
             features: [
               {
@@ -235,8 +235,8 @@ export const cardData = [
             subtitle: "The best option for 3 different events",
             looks: 3,
             days: 2,
-            looksPrice: 200,
-            daysPrice: 100,
+            // looksPrice: 200,
+            // daysPrice: 100,
             price: 2000,
             features: [
               {
