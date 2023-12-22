@@ -259,7 +259,7 @@ const Booking = () => {
             }}
             disabled={isLoading}
           >
-            Submit!
+            {isLoading ? "Submitting" : "Submit!"}
           </button>
         </form>
       </div>
