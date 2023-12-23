@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import Image from "next/image";
 import Modal from "./Modal";
-// import { ref, set, push } from "firebase/database";
+import { ref, set, push } from "firebase/database";
 
 import { database } from "../firebase";
 import toast from "react-hot-toast";
