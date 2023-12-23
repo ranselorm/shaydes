@@ -10,25 +10,23 @@ const Card = ({
   subtitle,
   looks,
   days,
-  daysPrice,
-  looksPrice,
+  subInfo,
   price,
   features,
 }) => {
   // console.log(card);
 
   return (
-    <div
-      className="border border-gray-300 hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transition-all duration-300 group bg-custom-radial cursor-pointer group"
-      onClick={() => {}}
-    >
+    <div className="border border-gray-300 hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transition-all duration-300 group bg-custom-radial cursor-pointer group">
       <article className="">
         <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] group-hover:border-[#CFB53B]">
           {title}
         </h4>
         <p className=" mt-3 text-[25px]">
           <span className="font-bold">₵{price}</span>
-          <span className="text-[12px] text-[#b8b5b5]">per bride</span>
+          <span className="text-[12px] text-[#b8b5b5]">
+            {subInfo ? subInfo : "per bride"}
+          </span>
         </p>
         <p className="text-[12px] text-[#b8b5b5]">{subtitle}</p>
         {/* <div className="h-[1px] bg-[#8d8a8a] opacity-[20%]" /> */}

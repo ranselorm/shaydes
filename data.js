@@ -47,6 +47,7 @@ export const cardData = [
             id: "3",
             title: "Civil wedding ONLY",
             price: 600,
+            subInfo: "bride only",
             features: [
               {
                 text: "Full face lasting make up",
@@ -84,8 +85,9 @@ export const cardData = [
           {
             id: "5",
             title: "White Wedding / Traditional",
-            subtitle: "The best option for only brides",
+            subtitle: "The best option for single event",
             price: 800,
+            subInfo: "bride only",
             features: [
               {
                 text: "Full face lasting make up",
@@ -182,7 +184,7 @@ export const cardData = [
             id: "9",
             looks: 2,
             title: "Traditional & White Wedding",
-            subtitle: "The best option for 2 different looks",
+            subtitle: "Best option for same day event  ",
             looksPrice: 650,
             price: 1450,
             features: [
@@ -203,7 +205,7 @@ export const cardData = [
           {
             id: "10",
             title: "Traditional & White Wedding",
-            subtitle: "The best option for 2 different events",
+            subtitle: "Best option for two days event",
             looks: 2,
             days: 2,
             // looksPrice: 200,

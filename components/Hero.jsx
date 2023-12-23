@@ -5,6 +5,7 @@ import Image from "next/image";
 import Modal from "./Modal";
 import { ref, set, push } from "firebase/database";
 import { database } from "../firebase";
+import toast from "react-hot-toast";
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +15,7 @@ const Hero = () => {
 
   const [formValues, setFormValues] = useState({
     fullname: "",
+    email: "",
     phone: "",
     location: "",
   });
@@ -31,8 +33,8 @@ const Hero = () => {
     setIsLoading(true);
 
     // Ensure all fields are filled out
-    const { fullname, phone, location } = formValues;
-    if (!fullname || !phone || !location) {
+    const { fullname, email, phone, location } = formValues;
+    if (!fullname || !email || !phone || !location) {
       alert("All fields are required!");
       setIsLoading(false);
       return;
@@ -45,6 +47,7 @@ const Hero = () => {
     };
     const userData = {
       fullname,
+      email,
       phone,
       location,
     };
@@ -53,10 +56,12 @@ const Hero = () => {
       await writeUserData(userData);
       setFormValues({
         fullname: "",
+        email: "",
         phone: "",
         location: "",
       });
       //  router.push("/success");
+      toast.success("Registration successful!");
       closeModal();
 
       console.log("Registration successful:", userData);
@@ -112,6 +117,16 @@ const Hero = () => {
             />
           </div>
           <div className="flex flex-col gap-y-2 items-start">
+            <label htmlFor="fullname">Email</label>
+            <input
+              className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
+              onChange={(e) => handleInputChange("email", e.target.value)}
+              value={formValues.email}
+              placeholder="e.g. ekua@example.com"
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-y-2 items-start">
             <label htmlFor="phone">Phone Number</label>
             <input
               className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
@@ -127,7 +142,7 @@ const Hero = () => {
             <input
               className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
               onChange={(e) => handleInputChange("location", e.target.value)}
-              placeholder="e.g La Amour Event Garden, Accra"
+              placeholder="e.g Baatsona, Spintex Rd."
               value={formValues.location}
               required
             />

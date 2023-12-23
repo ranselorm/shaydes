@@ -16,6 +16,7 @@
     "postcss": "8.4.32",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.29.0",
@@ -26,6 +27,7 @@
     "tailwindcss": "3.3.5"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.6.4",
     "@types/node": "20.10.4",
     "@types/react": "18.2.43",
     "typescript": "5.3.3"
