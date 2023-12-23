@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { confetti } from "canvas-confetti";
 
 const SuccessPage = () => {
   const router = useRouter();
@@ -11,13 +10,12 @@ const SuccessPage = () => {
 
   useEffect(() => {
     // Trigger confetti on mount
-    confetti({
-      zIndex: 1000,
-      particleCount: 150,
-      spread: 120,
-      origin: { y: 0.6 },
-    });
-
+    // confetti({
+    //   zIndex: 1000,
+    //   particleCount: 150,
+    //   spread: 120,
+    //   origin: { y: 0.6 },
+    // });
     // Start the countdown
     const intervalId = setInterval(() => {
       setCountdown((currentCountdown) => {
@@ -38,7 +36,7 @@ const SuccessPage = () => {
     <div className=" text-center h-screen mt-[100px]">
       <h1 className="font-bold text-[30px] md:text-[60px]">Congratulations!</h1>
       <p className="text-[20px]">Your booking was successful!</p>
-      {/* <p className="text-sm">Redirecting in {countdown}</p> */}
+      <p className="text-sm">Redirecting in {countdown}</p>
       {/* Additional content */}
     </div>
   );
