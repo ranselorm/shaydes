@@ -66,7 +66,7 @@ const NonBridal = () => {
     ],
   };
   return (
-    <section className="mt-[80px] lg:mt-[150px]">
+    <section className="mt-[80px] lg:mt-[150px] px-[20px] md:px-0">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-x-4">
           <article className="">
