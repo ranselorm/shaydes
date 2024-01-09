@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import Image from "next/image";
 import Modal from "./Modal";
+import { FaCrown } from "react-icons/fa";
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,6 +34,14 @@ const Hero = () => {
             >
               Sign Up
             </button>
+          </div>
+          <div className="relative bg-btn bg-cover bg-center flex flex-col gap-2 items-center py-1.5 px-4 cursor-pointer rounded-lg overflow-hidden">
+            <p className="z-50 flex flex-col items-center gap-y-1 text-black font-bold">
+              <FaCrown />
+              <span className="text-[13px]">Now Taking Bookings</span>
+              <span className="text-[16px]">UG Graduation x 54 Shaydes</span>
+            </p>
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-blue-500 opacity-75"></div>
           </div>
         </article>
         <div className="relative w-full h-[200px] lg:h-[600px] rounded-xl lg:rounded-[20px] overflow-hidden">
