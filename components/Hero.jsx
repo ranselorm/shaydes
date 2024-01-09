@@ -4,7 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 import Image from "next/image";
 import Modal from "./Modal";
-import SignupModal from "./SignupModal";
+import GraduateModal from "./GraduateModal";
 import { FaCrown } from "react-icons/fa";
 
 const Hero = () => {
@@ -63,7 +63,7 @@ const Hero = () => {
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
-      <SignupModal isOpen={isOpen} onClose={close} />
+      <GraduateModal isOpen={isOpen} onClose={close} />
     </section>
   );
 };
