@@ -3,74 +3,12 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import Image from "next/image";
 import Modal from "./Modal";
-import { ref, set, push } from "firebase/database";
-import { database } from "../firebase";
-import toast from "react-hot-toast";
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-
-  const [formValues, setFormValues] = useState({
-    fullname: "",
-    email: "",
-    phone: "",
-    location: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleInputChange = (name, value) => {
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    // Ensure all fields are filled out
-    const { fullname, email, phone, location } = formValues;
-    if (!fullname || !email || !phone || !location) {
-      alert("All fields are required!");
-      setIsLoading(false);
-      return;
-    }
-
-    const writeUserData = async (userData) => {
-      const userRef = ref(database, "users");
-      const newUserRef = push(userRef);
-      await set(newUserRef, userData);
-    };
-    const userData = {
-      fullname,
-      email,
-      phone,
-      location,
-    };
-
-    try {
-      await writeUserData(userData);
-      setFormValues({
-        fullname: "",
-        email: "",
-        phone: "",
-        location: "",
-      });
-      //  router.push("/success");
-      toast.success("Registration successful!");
-      closeModal();
-
-      console.log("Registration successful:", userData);
-    } catch (error) {
-      console.error("Error writing user to database", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <section>
@@ -101,65 +39,7 @@ const Hero = () => {
           <Image src="/main.jpg" alt="" fill className="object-cover" />
         </div>
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <form
-          className="w-full bg-white text-black flex flex-col gap-y-6 px-2 pt-[20px] rounded-xl pb-[20px]"
-          onSubmit={handleFormSubmit}
-        >
-          <div className="flex flex-col gap-y-2 items-start">
-            <label htmlFor="fullname">Full Name</label>
-            <input
-              className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
-              onChange={(e) => handleInputChange("fullname", e.target.value)}
-              value={formValues.fullname}
-              placeholder="e.g. Akua Amponsah"
-              required
-            />
-          </div>
-          <div className="flex flex-col gap-y-2 items-start">
-            <label htmlFor="fullname">Email</label>
-            <input
-              className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
-              onChange={(e) => handleInputChange("email", e.target.value)}
-              value={formValues.email}
-              placeholder="e.g. ekua@example.com"
-              required
-            />
-          </div>
-          <div className="flex flex-col gap-y-2 items-start">
-            <label htmlFor="phone">Phone Number</label>
-            <input
-              className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
-              onChange={(e) => handleInputChange("phone", e.target.value)}
-              value={formValues.phone}
-              placeholder="e.g. 024 000 0000"
-              required
-            />
-          </div>
-
-          <div className="flex flex-col gap-y-2 items-start">
-            <label htmlFor="location">Location</label>
-            <input
-              className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
-              onChange={(e) => handleInputChange("location", e.target.value)}
-              placeholder="e.g Baatsona, Spintex Rd."
-              value={formValues.location}
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className=" mt-10 py-2 text-black rounded-lg"
-            style={{
-              backgroundImage: "linear-gradient(to bottom, #FAC97A, #E9BF5C)",
-            }}
-            disabled={isLoading}
-          >
-            {isLoading ? "Submitting" : "Submit!"}
-          </button>
-        </form>
-      </Modal>
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
     </section>
   );
 };

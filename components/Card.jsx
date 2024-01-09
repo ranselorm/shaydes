@@ -14,8 +14,6 @@ const Card = ({
   price,
   features,
 }) => {
-  // console.log(card);
-
   return (
     <div className="border border-gray-300 hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transition-all duration-300 group bg-custom-radial cursor-pointer group">
       <article className="">
