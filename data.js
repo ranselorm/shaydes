@@ -115,7 +115,7 @@ export const cardData = [
             looks: 2,
             days: 2,
             // looksPrice: 200,
-            // daysPrice: 50,
+            daysPrice: 50,
             price: 1100,
             features: [
               {
@@ -139,7 +139,7 @@ export const cardData = [
             looks: 2,
             days: 2,
             // looksPrice: 200,
-            // daysPrice: 100,
+            daysPrice: 100,
             price: 1200,
             features: [
               {
@@ -158,7 +158,7 @@ export const cardData = [
           },
           {
             id: "8",
-            title: "Wedding & Reception",
+            title: "Traditional & Reception",
             subtitle: "The best option for 2 different events",
             looks: 2,
             // days: 2,
@@ -182,6 +182,30 @@ export const cardData = [
           },
           {
             id: "9",
+            title: "White Wedding & Reception",
+            subtitle: "The best option for 2 different events",
+            looks: 2,
+            // days: 2,
+            // looksPrice: 200,
+            // daysPrice: 100,
+            price: 1300,
+            features: [
+              {
+                text: "Full face lasting make up",
+              },
+              {
+                text: "Eye brow grooming",
+              },
+              {
+                text: "Bridal skin prep",
+              },
+              {
+                text: "Mink Lashes",
+              },
+            ],
+          },
+          {
+            id: "10",
             looks: 2,
             title: "Traditional & White Wedding",
             subtitle: "Best option for same day event  ",
@@ -203,7 +227,7 @@ export const cardData = [
             ],
           },
           {
-            id: "10",
+            id: "11",
             title: "Traditional & White Wedding",
             subtitle: "Best option for two days event",
             looks: 2,
@@ -232,13 +256,13 @@ export const cardData = [
         name: "Three Looks",
         options: [
           {
-            id: "11",
+            id: "12",
             title: "Traditional, White & Reception",
             subtitle: "The best option for 3 different events",
             looks: 3,
             days: 2,
             // looksPrice: 200,
-            // daysPrice: 100,
+            daysPrice: 100,
             price: 2000,
             features: [
               {

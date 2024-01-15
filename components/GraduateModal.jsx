@@ -10,7 +10,8 @@ const SignupModal = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
       <div className="relative top-20 mx-auto p-5 w-11/12 md:max-w-md lg:max-w-lg shadow-lg rounded-md bg-white">
-        <span className="absolute -top-3 -right-4 p-4" onClick={onClose}>
+        <span className="absolute -top-3 -right-4 p-4">
+          {/* onClick={onClose} */}
           <button
             type="button"
             className="text-black background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"

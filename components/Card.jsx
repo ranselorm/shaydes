@@ -10,12 +10,13 @@ const Card = ({
   subtitle,
   looks,
   days,
+  daysPrice,
   subInfo,
   price,
   features,
 }) => {
   return (
-    <div className="border border-gray-300 hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-3 pt-3 transition-all duration-300 group bg-custom-radial cursor-pointer group">
+    <div className="border border-gray-300 hover:border-[#CFB53B] w-full md:w-[270px] h-[400px] rounded-lg px-2 pt-3 transition-all duration-300 group bg-custom-radial cursor-pointer group">
       <article className="">
         <h4 className="text-[14px] font-bold flex-col inline-flex p-2 px-4 rounded-full bg-black text-white border-[1px] group-hover:border-[#CFB53B]">
           {title}
@@ -43,7 +44,11 @@ const Card = ({
                 <MdDateRange className="text-[20px]" />
                 <p className="flex flex-col">
                   <span>{days} Days</span>
-                  {/* <span className="text-[10px] font-bold">+ ₵{daysPrice}</span> */}
+                  {daysPrice && (
+                    <span className="text-[10px] font-bold">
+                      + ₵{daysPrice}
+                    </span>
+                  )}{" "}
                 </p>
               </button>
             )}
