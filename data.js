@@ -289,7 +289,7 @@ export const bridalItems = [
   {
     id: "1",
     name: "Traditional",
-    img: "/trad.jpg",
+    img: "/t2.jpg",
     images: [
       "/t1.jpg",
       "/t2.jpg",
