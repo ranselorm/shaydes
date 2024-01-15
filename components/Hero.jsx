@@ -27,7 +27,7 @@ const Hero = () => {
     <section>
       <div className="flex justify-center flex-col items-left lg:items-center gap-y-6 pt-12">
         <article className="flex justify-center flex-col items-center gap-y-6 w-full lg:w-3/5 lg:text-center mb-8">
-          <h2 className="font-semibold  text-[16px] lg:text-[25px] lg:leading-[40px]">
+          <h2 className="font-semibold text-[16px] lg:text-[25px] lg:leading-[40px]">
             Beauty is CONFIDENT . Beauty is BOLD . Beauty is YOU
           </h2>
           <p className="text-[#8d8a8a] text-[14px] md:text-[16px]">
@@ -58,6 +58,34 @@ const Hero = () => {
         </article>
         <div className="relative w-full h-[200px] lg:h-[600px] rounded-xl lg:rounded-[20px] overflow-hidden">
           <Image src="/main.jpg" alt="" fill className="object-cover" />
+        </div>
+        <div className="flex  flex-col md:flex-row justify-center items-center gap-10 mt-6">
+          <article className="md:w-5/12 flex flex-col gap-4 items-start">
+            <h3 className="font-semibold text-[16px] lg:text-[25px]">
+              Coming Soon!
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
+              nisi nihil nam similique quas natus ipsa debitis eum voluptatibus
+              eligendi. Necessitatibus doloremque, eum laboriosam quod esse
+              perspiciatis optio ipsum vel.
+            </p>
+            <div className="bg-white w-full md:w-9/12 flex items-center justify-between py-2 px-3 rounded-full">
+              <input
+                type="text"
+                className="outline-none text-black w-12/12"
+                placeholder="Enter your email address"
+              />
+              <button className="bg-btn-gradient py-2 px-3 rounded-full text-black text-sm font-semibold">
+                Notify Me
+              </button>
+            </div>
+          </article>
+          <div className="w-full md:w-4/12">
+            <div className="relative w-[350px] h-[350px] rounded-lg overflow-hidden">
+              <Image src="/n8.jpg" alt="" fill className="object-cover" />
+            </div>
+          </div>
         </div>
       </div>
       {/* <Modal isOpen={isModalOpen} onClose={closeModal} />
