@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Card from "../components/Card";
 import { cardData } from "../data";
 const RateCard = () => {
@@ -23,22 +22,22 @@ const RateCard = () => {
             </p>
           </div>
         </div>
-        <div className="flex md:items-center justify-center flex-col gap-12 md:px-2 px-0 border-2 border-blue-400 mx-auto">
+        <div className="flex md:items-center justify-center flex-col gap-12 md:px-4 px-0">
           {cardData.map((item) => (
             <div
               key={item.name}
-              className="border-4 border-green-500 mx-auto px-4"
+              className="flex justify-center mx-auto px-2 md:px-4"
             >
-              <h4 className="my-6 font-semibold text-[20px] md:text-[18px] flex flex-col">
-                {item.name}
-              </h4>
               <div className="">
+                <h4 className="my-6 font-semibold text-[20px] md:text-[18px] flex flex-col">
+                  {item.name}
+                </h4>
                 {item.categories.map((data) => (
-                  <div key={data.name}>
+                  <div key={data.name} className="">
                     <p className="mb-2 mt-12 font-bold text-[18px]">
                       {data.name}
                     </p>
-                    <div className="flex flex-wrap justify-start gap-4">
+                    <div className="flex flex-wrap justify-start items-center gap-4">
                       {data.options.map((data, index) => (
                         <Card {...data} key={index} />
                       ))}
