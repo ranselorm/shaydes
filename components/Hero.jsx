@@ -12,16 +12,20 @@ const Hero = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // useEffect(() => {
-  //   setIsOpen(true);
-  // }, []);
+  useEffect(() => {
+    const hasModalBeenShown = localStorage.getItem("modalShown");
+    if (!hasModalBeenShown) {
+      setIsOpen(true);
+      localStorage.setItem("modalShown", "true");
+    }
+  }, []);
 
-  // const close = () => {
-  //   setIsOpen(false);
-  // };
+  const close = () => {
+    setIsOpen(false);
+  };
 
-  // const openModal = () => setIsModalOpen(true);
-  // const closeModal = () => setIsModalOpen(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <section>
@@ -40,8 +44,10 @@ const Hero = () => {
                 Book Now
               </button>
             </ScrollLink>
-            <button className="bg-black bg-opacity-25 border border-black border-opacity-25 px-7 py-2 hover:bg-inherit transition rounded-full">
-              {/* onClick={openModal} */}
+            <button
+              className="bg-black bg-opacity-25 border border-black border-opacity-25 px-7 py-2 hover:bg-inherit transition rounded-full"
+              onClick={openModal}
+            >
               Sign Up
             </button>
           </div>
@@ -88,8 +94,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* <Modal isOpen={isModalOpen} onClose={closeModal} />
-      <GraduateModal isOpen={isOpen} onClose={close} /> */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
+      <GraduateModal isOpen={isOpen} onClose={close} />
     </section>
   );
 };
