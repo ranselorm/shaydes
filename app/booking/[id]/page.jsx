@@ -22,6 +22,7 @@ const Booking = () => {
     dateRange: [new Date(), new Date()],
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
   const findItemById = (id) => {
     for (const card of cardData) {
@@ -29,12 +30,14 @@ const Booking = () => {
         const found = category.options.find((item) => item.id === id);
         if (found) {
           return found;
+        } else {
+          setNotFound(true);
         }
       }
     }
     return null;
   };
-
+  console.log(notFound);
   const card = findItemById(id);
   // console.log(card);
 

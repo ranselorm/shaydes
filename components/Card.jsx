@@ -39,7 +39,7 @@ const Card = ({
                 {/* <span className="text-[10px] font-bold">+ ₵{looksPrice}</span> */}
               </p>
             </button>
-            {days && (
+            {/* {days && (
               <button className="bg-[#00D48E] px-3 rounded-full text-black text-[12px] gap-3 flex items-center">
                 <MdDateRange className="text-[20px]" />
                 <p className="flex flex-col">
@@ -48,10 +48,10 @@ const Card = ({
                     <span className="text-[10px] font-bold">
                       + ₵{daysPrice}
                     </span>
-                  )}{" "}
+                  )}
                 </p>
               </button>
-            )}
+            )} */}
           </div>
         ) : (
           <div className="h-10 mt-5" />

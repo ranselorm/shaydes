@@ -8,6 +8,7 @@ export const cardData = [
           {
             id: "1",
             title: "Bridal Trial",
+            subInfo: "bride only",
             price: 400,
             features: [
               {
@@ -27,6 +28,7 @@ export const cardData = [
           {
             id: "2",
             title: "Pre Wedding / Thanksgiving",
+            subInfo: "bride only",
             price: 400,
             features: [
               {
@@ -46,6 +48,7 @@ export const cardData = [
           {
             id: "3",
             title: "Civil wedding ONLY",
+            subInfo: "bride only",
             price: 600,
             subInfo: "bride only",
             features: [
@@ -66,6 +69,7 @@ export const cardData = [
           {
             id: "4",
             title: "Reception ONLY",
+            subInfo: "bride only",
             price: 600,
             features: [
               {
@@ -111,11 +115,12 @@ export const cardData = [
           {
             id: "6",
             title: "Civil Wedding & Reception",
-            subtitle: "The best option for 2 different events",
+            subtitle: "The best option for a single day event",
+            subInfo: "bride only",
             looks: 2,
             days: 2,
             // looksPrice: 200,
-            daysPrice: 50,
+            // daysPrice: 50,
             price: 1100,
             features: [
               {
@@ -134,13 +139,14 @@ export const cardData = [
           },
           {
             id: "7",
-            title: "Traditional & Civil Wedding",
-            subtitle: "The best option for 2 different events",
+            title: "Civil Wedding & Reception",
+            subtitle: "The best option for 2 days event",
+            subInfo: "bride only",
             looks: 2,
             days: 2,
             // looksPrice: 200,
-            daysPrice: 100,
-            price: 1200,
+            // daysPrice: 50,
+            price: 1150,
             features: [
               {
                 text: "Full face lasting make up",
@@ -158,13 +164,14 @@ export const cardData = [
           },
           {
             id: "8",
-            title: "Traditional & Reception",
-            subtitle: "The best option for 2 different events",
+            title: "Traditional & Civil Wedding",
+            subtitle: "The best option for a single day event",
+            subInfo: "bride only",
             looks: 2,
-            // days: 2,
+            days: 2,
             // looksPrice: 200,
             // daysPrice: 100,
-            price: 1300,
+            price: 1200,
             features: [
               {
                 text: "Full face lasting make up",
@@ -182,10 +189,11 @@ export const cardData = [
           },
           {
             id: "9",
-            title: "White Wedding & Reception",
-            subtitle: "The best option for 2 different events",
+            title: "Traditional & Civil Wedding",
+            subtitle: "The best option for 2 days event",
+            subInfo: "bride only",
             looks: 2,
-            // days: 2,
+            days: 2,
             // looksPrice: 200,
             // daysPrice: 100,
             price: 1300,
@@ -206,9 +214,35 @@ export const cardData = [
           },
           {
             id: "10",
+            title: "Trad Or White & Reception",
+            subtitle: "The best option for a single day event",
+            subInfo: "bride only",
+            looks: 2,
+            // days: 2,
+            // looksPrice: 200,
+            // daysPrice: 100,
+            price: 1300,
+            features: [
+              {
+                text: "Full face lasting make up",
+              },
+              {
+                text: "Eye brow grooming",
+              },
+              {
+                text: "Bridal skin prep",
+              },
+              {
+                text: "Mink Lashes",
+              },
+            ],
+          },
+          {
+            id: "11",
             looks: 2,
             title: "Traditional & White Wedding",
             subtitle: "Best option for same day event  ",
+            subInfo: "bride only",
             looksPrice: 650,
             price: 1450,
             features: [
@@ -227,9 +261,10 @@ export const cardData = [
             ],
           },
           {
-            id: "11",
+            id: "12",
             title: "Traditional & White Wedding",
             subtitle: "Best option for two days event",
+            subInfo: "bride only",
             looks: 2,
             days: 2,
             // looksPrice: 200,
@@ -256,14 +291,40 @@ export const cardData = [
         name: "Three Looks",
         options: [
           {
-            id: "12",
+            id: "13",
             title: "Traditional, White & Reception",
-            subtitle: "The best option for 3 different events",
+            subtitle: "The best option for a single day event",
+            subInfo: "bride only",
             looks: 3,
             days: 2,
             // looksPrice: 200,
-            daysPrice: 100,
+            // daysPrice: 100,
             price: 2000,
+            features: [
+              {
+                text: "Full face lasting make up",
+              },
+              {
+                text: "Eye brow grooming",
+              },
+              {
+                text: "Bridal skin prep",
+              },
+              {
+                text: "Mink Lashes",
+              },
+            ],
+          },
+          {
+            id: "14",
+            title: "Traditional, White & Reception",
+            subtitle: "The best option for 2 days event",
+            subInfo: "bride only",
+            looks: 3,
+            days: 2,
+            // looksPrice: 200,
+            // daysPrice: 100,
+            price: 2100,
             features: [
               {
                 text: "Full face lasting make up",
