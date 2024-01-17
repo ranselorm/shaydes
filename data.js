@@ -88,7 +88,7 @@ export const cardData = [
           },
           {
             id: "5",
-            title: "White OR Trad Wedding",
+            title: "White OR Trad Wedding ONLY",
             subtitle: "The best option for single event",
             price: 800,
             subInfo: "bride only",
