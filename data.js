@@ -88,7 +88,7 @@ export const cardData = [
           },
           {
             id: "5",
-            title: "White Wedding / Traditional",
+            title: "White OR Trad Wedding",
             subtitle: "The best option for single event",
             price: 800,
             subInfo: "bride only",
@@ -164,7 +164,7 @@ export const cardData = [
           },
           {
             id: "8",
-            title: "Traditional & Civil Wedding",
+            title: "Trad & Civil Wedding",
             subtitle: "The best option for a single day event",
             subInfo: "bride only",
             looks: 2,
@@ -189,7 +189,7 @@ export const cardData = [
           },
           {
             id: "9",
-            title: "Traditional & Civil Wedding",
+            title: "Trad & Civil Wedding",
             subtitle: "The best option for 2 days event",
             subInfo: "bride only",
             looks: 2,
@@ -214,7 +214,7 @@ export const cardData = [
           },
           {
             id: "10",
-            title: "Trad Or White & Reception",
+            title: "Trad OR White & Reception",
             subtitle: "The best option for a single day event",
             subInfo: "bride only",
             looks: 2,
@@ -240,7 +240,7 @@ export const cardData = [
           {
             id: "11",
             looks: 2,
-            title: "Traditional & White Wedding",
+            title: "Trad & White Wedding",
             subtitle: "Best option for same day event  ",
             subInfo: "bride only",
             looksPrice: 650,
@@ -262,7 +262,7 @@ export const cardData = [
           },
           {
             id: "12",
-            title: "Traditional & White Wedding",
+            title: "Trad & White Wedding",
             subtitle: "Best option for two days event",
             subInfo: "bride only",
             looks: 2,
@@ -292,7 +292,7 @@ export const cardData = [
         options: [
           {
             id: "13",
-            title: "Traditional, White & Reception",
+            title: "Trad, White & Reception",
             subtitle: "The best option for a single day event",
             subInfo: "bride only",
             looks: 3,
@@ -317,7 +317,7 @@ export const cardData = [
           },
           {
             id: "14",
-            title: "Traditional, White & Reception",
+            title: "Trad, White & Reception",
             subtitle: "The best option for 2 days event",
             subInfo: "bride only",
             looks: 3,
@@ -349,7 +349,7 @@ export const cardData = [
 export const bridalItems = [
   {
     id: "1",
-    name: "Traditional",
+    name: "Trad",
     img: "/t2.jpg",
     images: [
       "/t1.jpg",

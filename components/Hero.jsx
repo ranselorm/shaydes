@@ -9,7 +9,6 @@ import { FaCrown } from "react-icons/fa";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -65,7 +64,7 @@ const Hero = () => {
         <div className="relative w-full h-[200px] lg:h-[600px] rounded-xl lg:rounded-[20px] overflow-hidden">
           <Image src="/main.jpg" alt="" fill className="object-cover" />
         </div>
-        <div className="flex  flex-col md:flex-row justify-center items-center gap-10 mt-6">
+        <div className="flex  flex-col md:flex-row justify-center items-center gap-10 my-[100px]">
           <article className="md:w-5/12 flex flex-col gap-4 items-start">
             <h3 className="font-semibold text-[16px] lg:text-[25px]">
               Coming Soon!
