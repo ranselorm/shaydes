@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose }) => {
     fullname: "",
     email: "",
     phone: "",
-    location: "",
+    course: "",
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,15 +25,15 @@ const Modal = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     // Ensure all fields are filled out
-    const { fullname, email, phone, location } = formValues;
-    if (!fullname || !email || !phone || !location) {
+    const { fullname, email, phone, course } = formValues;
+    if (!fullname || !email || !phone || !course) {
       alert("All fields are required!");
       setIsLoading(false);
       return;
     }
 
     const writeUserData = async (userData) => {
-      const userRef = ref(database, "users");
+      const userRef = ref(database, "graduation");
       const newUserRef = push(userRef);
       await set(newUserRef, userData);
     };
@@ -41,7 +41,7 @@ const Modal = ({ isOpen, onClose }) => {
       fullname,
       email,
       phone,
-      location,
+      course,
     };
 
     try {
@@ -50,7 +50,7 @@ const Modal = ({ isOpen, onClose }) => {
         fullname: "",
         email: "",
         phone: "",
-        location: "",
+        course: "",
       });
       //  router.push("/success");
       toast.success("Registration successful!");
@@ -112,12 +112,12 @@ const Modal = ({ isOpen, onClose }) => {
             </div>
 
             <div className="flex flex-col gap-y-2 items-start">
-              <label htmlFor="location">Location</label>
+              <label htmlFor="course">Course</label>
               <input
                 className="py-[6.5px] w-full px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
-                onChange={(e) => handleInputChange("location", e.target.value)}
-                placeholder="e.g Baatsona, Spintex Rd."
-                value={formValues.location}
+                onChange={(e) => handleInputChange("course", e.target.value)}
+                placeholder="e.g Business Administration"
+                value={formValues.course}
                 required
               />
             </div>
