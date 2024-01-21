@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Bridal />
       <NonBridal />
-      <OutsideWork />
+      {/* <OutsideWork /> */}
       <RateCard />
     </div>
   );
