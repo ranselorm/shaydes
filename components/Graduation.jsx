@@ -10,9 +10,9 @@ const Graduation = () => {
 
   return (
     <section className="my-[100px]">
-      <div className="flex flex-col md:flex-row justify-center items-center gap-10 ">
+      <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 ">
         <article className="md:w-5/12 flex flex-col gap-4 items-start">
-          <h3 className="font-semibold text-[16px] lg:text-[25px] flex items-center gap-3">
+          <h3 className="font-semibold text-[20px] lg:text-[25px] flex items-center gap-3">
             Graduation Time
             <GiGraduateCap className="text-[#FAC97A]" />
           </h3>
