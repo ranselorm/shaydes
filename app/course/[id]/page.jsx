@@ -6,7 +6,7 @@ import { courseItems } from "../../../data";
 const CoursePage = () => {
   return (
     <>
-      <div className="flex">
+      {/* <div className="flex">
         <section className="w-3/12 h-max py-10 p-4 shadow-lg">
           <div>
             <div>Logo</div>
@@ -35,28 +35,29 @@ const CoursePage = () => {
         </section>
         <main className="bg-gray-100 w-9/12 flex justify-center pt-[50px]">
           <div className="w-full">
-            <div className="w-9/12 h-[380px] mx-auto">
-              <ReactPlayer
-                url="https://youtu.be/k6eE3c70hgg?si=KuyFAhz3KG4eF83q"
-                width="100%"
-                height="100%"
-              />
-              <article>
-                <h2 className="text-[18px] my-4">Overview</h2>
-                <h4 className="text-[23px] font-bold">
-                  Lorem ipsum dolor sit amet
-                </h4>
-                <p className="text-[15px]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ipsam, tempore explicabo itaque repellat minima eum laudantium
-                  autem repudiandae, odit fugit est. Adipisci laboriosam,
-                  debitis fuga eum excepturi laudantium consequuntur earum!
-                </p>
-              </article>
-            </div>
+            {courseItems.map((course) =>
+              course.content.map((course) => (
+                <div className="w-9/12 h-[380px] mx-auto">
+                  <ReactPlayer url="" width="100%" height="100%" />
+                  <article>
+                    <h2 className="text-[18px] my-4">{course.name}</h2>
+                    <h4 className="text-[23px] font-bold">
+                      Lorem ipsum dolor sit amet
+                    </h4>
+                    <p className="text-[15px]">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ipsam, tempore explicabo itaque repellat minima eum
+                      laudantium autem repudiandae, odit fugit est. Adipisci
+                      laboriosam, debitis fuga eum excepturi laudantium
+                      consequuntur earum!
+                    </p>
+                  </article>
+                </div>
+              ))
+            )}
           </div>
         </main>
-      </div>
+      </div> */}
     </>
   );
 };
