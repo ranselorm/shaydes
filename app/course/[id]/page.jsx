@@ -19,7 +19,7 @@ const CoursePage = () => {
                   </div>
                   {course.content.map((course) => (
                     <div key={course.id}>
-                      <h4 className="py-2 text-[14px] hover:bg-gray-200">
+                      <h4 className="py-2 text-[14px] hover:bg-gray-200 transition-all cursor-pointer">
                         <span className="mr-2">{course.id}.</span>
                         {course.name}
                       </h4>
