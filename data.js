@@ -389,3 +389,99 @@ export const bridalItems = [
     img: "/reception.jpg",
   },
 ];
+
+export const courseItems = [
+  {
+    id: "1",
+    section: 1,
+    name: "Getting Started",
+    content: [
+      {
+        id: "1",
+        name: "Introduction",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "2",
+        name: "What is cosmotology?",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "3",
+        name: "Various benefits",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "4",
+        name: "How to apply",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+    ],
+  },
+  {
+    id: "2",
+    section: 2,
+    name: "Getting Started",
+    content: [
+      {
+        id: "1",
+        name: "Introduction",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "2",
+        name: "What is cosmotology?",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "3",
+        name: "Various benefits",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "4",
+        name: "How to apply",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+    ],
+  },
+  {
+    id: "3",
+    section: 3,
+    name: "Getting Started",
+    content: [
+      {
+        id: "1",
+        name: "Introduction",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "2",
+        name: "What is cosmotology?",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "3",
+        name: "Various benefits",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+      {
+        id: "4",
+        name: "How to apply",
+        videourl: "helloworld.png",
+        overview: "This is the overview of the video",
+      },
+    ],
+  },
+];

@@ -3,6 +3,7 @@ import Bridal from "../components/Bridal";
 import NonBridal from "../components/NonBridal";
 import OutsideWork from "../components/OutsideWork";
 import RateCard from "../components/RateCard";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
@@ -15,3 +16,5 @@ export default function Home() {
     </div>
   );
 }
+
+// className = "text-white bg-black/95 p-[20px] md:p-[50px] lg:p-[60px] w-full";
