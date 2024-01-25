@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const cardData = [
   {
     name: "Individual",
@@ -390,102 +392,396 @@ export const bridalItems = [
   },
 ];
 
+// export const courseItems = [
+//   {
+//     id: "1",
+//     name: "Cosmetology",
+//     backdrop: "/cos.jpg",
+//     chapters: [
+//       {
+//         id: uuidv4(),
+//         section: 1,
+//         name: "Getting Started",
+//         content: [
+//           {
+//             id: uuidv4(),
+//             name: "Introduction",
+//             videourl: "https://youtu.be/k6eE3c70hgg?si=KuyFAhz3KG4eF83q",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "What is Cosmetology:?",
+//             videourl: "https://youtu.be/7b0ETFcWrgY?si=NMlYwa5EE3H6mSbu",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//       {
+//         id: uuidv4(),
+//         section: 2,
+//         name: "Continuation",
+//         content: [
+//           {
+//             id: uuidv4(),
+//             name: "Introduction",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "What is cosmotology?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//       {
+//         id: uuidv4(),
+//         section: 2,
+//         name: "Continuation",
+//         content: [
+//           {
+//             id: uuidv4(),
+//             name: "Introduction",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "What is cosmotology?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: uuidv4(),
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     id: uuidv4(),
+//     name: "Fiction",
+//     backdrop: "/cs.jpg",
+//     chapters: [
+//       {
+//         id: "1",
+//         section: 1,
+//         name: "Getting Started",
+//         content: [
+//           {
+//             id: "1",
+//             name: "Introduction",
+//             videourl: "https://youtu.be/k6eE3c70hgg?si=KuyFAhz3KG4eF83q",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "2",
+//             name: "What is Cosmetology:?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "3",
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "4",
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//       {
+//         id: "2",
+//         section: 2,
+//         name: "Getting Started",
+//         content: [
+//           {
+//             id: "1",
+//             name: "Introduction",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "2",
+//             name: "What is cosmotology?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "3",
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "4",
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//       {
+//         id: "3",
+//         section: 3,
+//         name: "Getting Started",
+//         content: [
+//           {
+//             id: "1",
+//             name: "Introduction",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "2",
+//             name: "What is cosmotology?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "3",
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "4",
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     id: uuidv4(),
+//     name: "Cosmetology",
+//     backdrop: "/bt.jpg",
+//     chapters: [
+//       {
+//         id: "1",
+//         section: 1,
+//         name: "Getting Started",
+//         content: [
+//           {
+//             id: "1",
+//             name: "Introduction",
+//             videourl: "https://youtu.be/k6eE3c70hgg?si=KuyFAhz3KG4eF83q",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "2",
+//             name: "What is Cosmetology:?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "3",
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "4",
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//       {
+//         id: "2",
+//         section: 2,
+//         name: "Getting Started",
+//         content: [
+//           {
+//             id: "1",
+//             name: "Introduction",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "2",
+//             name: "What is cosmotology?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "3",
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "4",
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//       {
+//         id: "3",
+//         section: 3,
+//         name: "Getting Started",
+//         content: [
+//           {
+//             id: "1",
+//             name: "Introduction",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "2",
+//             name: "What is cosmotology?",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "3",
+//             name: "Various benefits",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//           {
+//             id: "4",
+//             name: "How to apply",
+//             videourl: "helloworld.png",
+//             overview: "This is the overview of the video",
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// ];
+
 export const courseItems = [
   {
     id: "1",
-    name: "Cosmetology",
+    name: "Cosmetology Mastery",
     backdrop: "/cos.jpg",
     chapters: [
       {
         id: "1",
         section: 1,
-        name: "Getting Started",
+        name: "Introduction to Cosmetology",
         content: [
           {
             id: "1",
-            name: "Introduction",
-            videourl: "https://youtu.be/k6eE3c70hgg?si=KuyFAhz3KG4eF83q",
-            overview: "This is the overview of the video",
+            name: "Understanding Cosmetology Basics",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview: "Explore the fundamental concepts of cosmetology.",
           },
           {
             id: "2",
-            name: "What is Cosmetology:?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "History of Cosmetology",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Learn about the rich history and evolution of cosmetology practices.",
           },
           {
             id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Essential Tools and Techniques",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Get hands-on with the essential tools and techniques used in cosmetology.",
           },
           {
             id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Careers in Cosmetology",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Explore diverse career paths in the field of cosmetology.",
           },
         ],
       },
       {
         id: "2",
         section: 2,
-        name: "Getting Started",
+        name: "Advanced Styling Techniques",
         content: [
           {
             id: "1",
-            name: "Introduction",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Creative Hairstyling",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Master advanced hairstyling techniques for creative expressions.",
           },
           {
             id: "2",
-            name: "What is cosmotology?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Coloring and Highlights",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Dive into the world of hair coloring and highlights for a stunning look.",
           },
         ],
       },
       {
         id: "3",
         section: 3,
-        name: "Getting Started",
+        name: "Nail Artistry",
         content: [
           {
             id: "1",
-            name: "Introduction",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Basic Nail Care",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Learn essential techniques for basic nail care and maintenance.",
           },
           {
             id: "2",
-            name: "What is cosmotology?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Creative Nail Designs",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Explore creative and trendy nail art designs for various occasions.",
           },
         ],
       },
@@ -493,199 +789,56 @@ export const courseItems = [
   },
   {
     id: "2",
-    name: "Fiction",
+    name: "Beauty Therapy Essentials",
     backdrop: "/cs.jpg",
     chapters: [
       {
         id: "1",
         section: 1,
-        name: "Getting Started",
+        name: "Introduction to Beauty Therapy",
         content: [
           {
             id: "1",
-            name: "Introduction",
-            videourl: "https://youtu.be/k6eE3c70hgg?si=KuyFAhz3KG4eF83q",
-            overview: "This is the overview of the video",
+            name: "Skin Anatomy and Care",
+            videourl:
+              "https://www.youtube.com/watch?v=IGHpSGwZiHo&pp=ygUMY29zbWV0b2xvZ3kg",
+            overview:
+              "Understand the anatomy of the skin and essential skincare practices.",
           },
           {
             id: "2",
-            name: "What is Cosmetology:?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Facial Treatments",
+            videourl: "https://youtu.be/beauty_therapy_facial",
+            overview:
+              "Explore rejuvenating facial treatments for radiant and healthy skin.",
           },
           {
             id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Makeup Artistry",
+            videourl: "https://youtu.be/beauty_therapy_makeup",
+            overview:
+              "Learn the art of makeup application for various occasions.",
           },
         ],
       },
       {
         id: "2",
         section: 2,
-        name: "Getting Started",
+        name: "Body and Wellness",
         content: [
           {
             id: "1",
-            name: "Introduction",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Massage Techniques",
+            videourl: "https://youtu.be/beauty_therapy_massage",
+            overview:
+              "Master the art of massage techniques for relaxation and wellness.",
           },
           {
             id: "2",
-            name: "What is cosmotology?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-        ],
-      },
-      {
-        id: "3",
-        section: 3,
-        name: "Getting Started",
-        content: [
-          {
-            id: "1",
-            name: "Introduction",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "2",
-            name: "What is cosmotology?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "3",
-    name: "Cosmetology",
-    backdrop: "/bt.jpg",
-    chapters: [
-      {
-        id: "1",
-        section: 1,
-        name: "Getting Started",
-        content: [
-          {
-            id: "1",
-            name: "Introduction",
-            videourl: "https://youtu.be/k6eE3c70hgg?si=KuyFAhz3KG4eF83q",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "2",
-            name: "What is Cosmetology:?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-        ],
-      },
-      {
-        id: "2",
-        section: 2,
-        name: "Getting Started",
-        content: [
-          {
-            id: "1",
-            name: "Introduction",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "2",
-            name: "What is cosmotology?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-        ],
-      },
-      {
-        id: "3",
-        section: 3,
-        name: "Getting Started",
-        content: [
-          {
-            id: "1",
-            name: "Introduction",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "2",
-            name: "What is cosmotology?",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "3",
-            name: "Various benefits",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
-          },
-          {
-            id: "4",
-            name: "How to apply",
-            videourl: "helloworld.png",
-            overview: "This is the overview of the video",
+            name: "Holistic Wellness",
+            videourl: "https://youtu.be/beauty_therapy_wellness",
+            overview:
+              "Explore holistic approaches to wellness for a balanced and healthy lifestyle.",
           },
         ],
       },
