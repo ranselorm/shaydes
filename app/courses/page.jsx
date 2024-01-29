@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import { courseItems } from "../../data";
-import { useRouter } from "next/navigation";
 import CourseDetailModal from "../../components/CourseDetailModal";
 
 const Courses = () => {
@@ -20,7 +18,7 @@ const Courses = () => {
 
   return (
     <>
-      <div className="flex justify-center py-10 gap-5 items-center h-screen">
+      <div className="flex flex-col md:flex-row justify-center py-10 gap-5 items-center h-screen md:-mt-[80px]">
         {courseItems.map((course) => (
           <div
             key={course.id}

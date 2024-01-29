@@ -9,7 +9,7 @@ const Graduation = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <section className="my-[100px]">
+    <section className="my-[30px]">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 ">
         <article className="md:w-5/12 flex flex-col gap-4 md:items-start items-center">
           <h3 className="font-semibold text-[20px] lg:text-[25px] flex items-center gap-3">
@@ -27,11 +27,6 @@ const Graduation = () => {
             makeup look. Book now and let's make your graduation day a beautiful
             and unforgettable experience!
           </p>
-          {/* <input
-              type="text"
-              className="outline-none text-black w-12/12"
-              placeholder="Enter your email address"
-            /> */}
           <button
             className="bg-btn-gradient py-2 px-3 rounded-full text-black text-sm font-semibold md:w-4/12 w-full"
             onClick={() => setIsModalOpen(true)}

@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="text-white bg-black/95 p-[20px] md:p-[50px] lg:p-[60px]">
+        <main className="text-white bg-black/95 px-[20px] md:px-[50px] lg:px-[60px]">
           <Navbar />
           <Toaster />
           {children}
