@@ -1,13 +1,21 @@
+"use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { courseItems } from "../../data";
+import { courseItems, isAuthenticated } from "../../data";
+import { useRouter } from "next/navigation";
+import Modal from "../../components/Modal";
 
 const Courses = () => {
+  const [isAuth, setIsAuth] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
   return (
     <>
+      (
       <div className="flex justify-center py-10 gap-5 items-center h-screen">
         {courseItems.map((course) => (
           <div key={course.id} className="w-[300px]">
-            <Link href={`/courses/${course.id}`}>
+            <Link href={`/course/${course.id}`}>
               <div className="relative w-[300px] h-[250px] rounded-lg overflow-hidden group">
                 <img
                   src={course.backdrop}
@@ -30,7 +38,7 @@ const Courses = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   alias ut assumenda mollitia.
                 </p>
-                <Link href={`/courses/${course.id}`}>
+                <Link href={`/course/${course.id}`}>
                   <button className="bg-btn-gradient py-2 px-3 rounded-full text-black text-[18px] font-semibold mt-4 w-full">
                     Enroll Now!
                   </button>
@@ -40,6 +48,7 @@ const Courses = () => {
           </div>
         ))}
       </div>
+      )
     </>
   );
 };

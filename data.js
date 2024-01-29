@@ -795,7 +795,7 @@ export const courseItems = [
       {
         id: "1",
         section: 1,
-        name: "Introduction to Beauty Therapy",
+        name: "Intro to Beauty Therapy",
         content: [
           {
             id: "1",
@@ -845,3 +845,5 @@ export const courseItems = [
     ],
   },
 ];
+
+export const isAuthenticated = false;
