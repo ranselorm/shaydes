@@ -700,6 +700,7 @@ export const courseItems = [
     id: "1",
     name: "Cosmetology Mastery",
     backdrop: "/cos.jpg",
+    price: 47,
     chapters: [
       {
         id: "1",

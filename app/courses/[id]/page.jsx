@@ -171,8 +171,8 @@ const CoursePage = () => {
   // Render the component
   return (
     <>
-      <div className="flex">
-        <section className="w-[350px] h-screen py-10 p-4 shadow-lg bg-gray-100 overflow-y-auto">
+      <div className="flex bg-inherit rounded-lg overflow-hidden">
+        <section className="w-[350px] h-screen py-10 p-4 shadow-lg bg-gray-900 overflow-y-auto">
           {/* Sidebar content */}
           <div className="px-2">Logo</div>
           <h4 className="font-bold my-6 px-2">Course Content</h4>
@@ -219,7 +219,7 @@ const CoursePage = () => {
             ))}
           </div>
         </section>
-        <main className="w-9/12 flex justify-center pt-[50px] bg-white">
+        <main className="w-9/12 flex justify-center pt-[50px] bg-gray-100 text-black">
           {/* Main content */}
           <div className="w-8/12">
             <div className="w-full h-[380px] mx-auto rounded-lg overflow-hidden shadow-lg bg-black">

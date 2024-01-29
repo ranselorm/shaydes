@@ -20,7 +20,6 @@ const Courses = () => {
 
   return (
     <>
-      (
       <div className="flex justify-center py-10 gap-5 items-center h-screen">
         {courseItems.map((course) => (
           <div
@@ -57,7 +56,6 @@ const Courses = () => {
           </div>
         ))}
       </div>
-      )
       {isModalOpen && (
         <CourseDetailModal
           course={selectedCourse}
