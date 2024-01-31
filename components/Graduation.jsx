@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import GradModal from "./GradModal";
 import { GiGraduateCap } from "react-icons/gi";
@@ -13,7 +14,7 @@ const Graduation = () => {
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 ">
         <article className="md:w-5/12 flex flex-col gap-4 md:items-start items-center">
           <h3 className="font-semibold text-[20px] lg:text-[25px] flex items-center gap-3">
-            Graduation Time
+            54Shaydes Academia
             <GiGraduateCap className="text-[#FAC97A]" />
           </h3>
           <p className="md:text-left text-center">
@@ -27,12 +28,12 @@ const Graduation = () => {
             makeup look. Book now and let's make your graduation day a beautiful
             and unforgettable experience!
           </p>
-          <button
+          <Link
+            href="/courses"
             className="bg-btn-gradient py-2 px-3 rounded-full text-black text-sm font-semibold md:w-4/12 w-full"
-            onClick={() => setIsModalOpen(true)}
           >
-            Register
-          </button>
+            <button onClick={() => setIsModalOpen(true)}>Courses</button>
+          </Link>
         </article>
         <div className="w-full md:w-4/12 flex justify-center">
           <div className="relative w-[350px] h-[350px] rounded-lg overflow-hidden">
@@ -40,7 +41,7 @@ const Graduation = () => {
           </div>
         </div>
       </div>
-      <GradModal isOpen={isModalOpen} onClose={closeModal} db="graduation" />
+      {/* <GradModal isOpen={isModalOpen} onClose={closeModal} db="graduation" /> */}
     </section>
   );
 };

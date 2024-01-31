@@ -7,7 +7,6 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB (replace 'your-mongodb-uri' with your actual MongoDB URI)
 mongoose.connect(
   "mongodb+srv://ranselorm:RAf7p7tyyvyQyu75@mernapp.g3k5zgh.mongodb.net/shadyes?retryWrites=true&w=majority",
   {
@@ -16,12 +15,8 @@ mongoose.connect(
   }
 );
 
-// mongodb+srv://ranselorm:RAf7p7tyyvyQyu75@mernapp.g3k5zgh.mongodb.net/shadyes
-// // Middleware
 app.use(express.json());
 app.use(cors());
-
-// Routes
 
 // Create a new course
 app.post("/api/courses", async (req, res) => {
@@ -34,6 +29,8 @@ app.post("/api/courses", async (req, res) => {
   }
 });
 
+//get courses
+
 app.get("/api/courses", async (req, res) => {
   try {
     const courses = await Course.find();
@@ -44,9 +41,10 @@ app.get("/api/courses", async (req, res) => {
   }
 });
 
+// get a single course
+
 app.get("/api/courses/:id", async (req, res) => {
   const { id } = req.params;
-
   try {
     const course = await Course.findById(id);
     if (!course) {
