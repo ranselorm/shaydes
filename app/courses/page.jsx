@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { courseItems } from "../../data";
 import CourseDetailModal from "../../components/CourseDetailModal";
 
@@ -15,6 +15,16 @@ const Courses = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:5000/api/courses");
+      const data = await response.json();
+      console.log("from backend", data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
