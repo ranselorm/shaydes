@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-// import { courseItems } from "../../data";
 import CourseDetailModal from "../../components/CourseDetailModal";
 
 const Courses = () => {
@@ -10,14 +9,16 @@ const Courses = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5000/api/courses");
+      const response = await fetch("/api/courses");
       const data = await response.json();
       setCourseItems(data);
-      // console.log("from backend", data);
+      console.log("from backend", data);
     };
 
     fetchData();
   }, []);
+
+  console.log(courseItems);
 
   const openModal = (course) => {
     setSelectedCourse(course);
@@ -30,7 +31,7 @@ const Courses = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row justify-center py-10 gap-5 items-center h-screen md:-mt-[80px]">
-        {courseItems.map((course) => (
+        {courseItems?.map((course) => (
           <div
             key={course.id}
             className="w-[300px]"

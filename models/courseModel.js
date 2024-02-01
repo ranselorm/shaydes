@@ -1,25 +1,31 @@
 const mongoose = require("mongoose");
 
-const contentSchema = new mongoose.Schema({
-  id: String,
+const { Schema, Types } = mongoose;
+
+const contentSchema = new Schema({
+  _id: Types.ObjectId,
   name: String,
   videourl: String,
   overview: String,
 });
 
-const chapterSchema = new mongoose.Schema({
-  id: String,
+const chapterSchema = new Schema({
+  _id: Types.ObjectId,
   section: Number,
   name: String,
   content: [contentSchema],
 });
 
-const courseSchema = new mongoose.Schema({
-  id: String,
+const courseSchema = new Schema({
+  _id: Types.ObjectId,
   name: String,
   backdrop: String,
   chapters: [chapterSchema],
 });
+
+if (mongoose.models.Course) {
+  delete mongoose.models.Course;
+}
 
 const Course = mongoose.model("Course", courseSchema);
 
