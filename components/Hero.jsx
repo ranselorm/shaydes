@@ -5,26 +5,11 @@ import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 import Modal from "./Modal";
 import Graduation from "./Graduation";
-import GraduateModal from "./GraduateModal";
 import { FaCrown } from "react-icons/fa";
 
 const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const hasModalBeenShown = localStorage.getItem("modalShown");
-    if (!hasModalBeenShown) {
-      setIsOpen(true);
-      localStorage.setItem("modalShown", "true");
-    }
-  }, []);
-
-  const close = () => {
-    setIsOpen(false);
-  };
-
-  const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   return (
@@ -44,12 +29,6 @@ const Hero = () => {
                 Book Now
               </button>
             </ScrollLink>
-            {/* <button
-              className="bg-black bg-opacity-25 border border-black border-opacity-25 px-7 py-2 hover:bg-inherit transition rounded-full"
-              onClick={openModal}
-            >
-              Sign Up
-            </button> */}
           </div>
           <Graduation />
         </article>
@@ -58,7 +37,6 @@ const Hero = () => {
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
-      <GraduateModal isOpen={isOpen} onClose={close} db="users" />
     </section>
   );
 };
