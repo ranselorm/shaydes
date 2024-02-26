@@ -1,5 +1,4 @@
 "use client";
-// import { useRouter } from "next/router";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { DateRangePicker } from "rsuite";
@@ -10,9 +9,11 @@ import { MdDateRange } from "react-icons/md";
 import { ref, set, push } from "firebase/database";
 import { database } from "../../../firebase";
 import "rsuite/dist/rsuite-rtl.css";
-import { Router } from "next/router";
+import Checkbox from "../../../components/Checkbox";
 
 const Booking = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const { id } = useParams();
   const [formValues, setFormValues] = useState({
@@ -20,6 +21,7 @@ const Booking = () => {
     phone: "",
     location: "",
     dateRange: [new Date(), new Date()],
+    reference: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
@@ -37,9 +39,7 @@ const Booking = () => {
     }
     return null;
   };
-  console.log(notFound);
   const card = findItemById(id);
-  // console.log(card);
 
   const handleInputChange = (name, value) => {
     setFormValues((prevValues) => ({
@@ -49,7 +49,6 @@ const Booking = () => {
   };
 
   const formatDateRange = (dates) => {
-    // Define arrays of weekday and month names
     const weekdays = [
       "Sunday",
       "Monday",
@@ -89,14 +88,21 @@ const Booking = () => {
     await set(newBookingRef, userData);
   };
 
+  const validateForm =
+    !formValues.fullname ||
+    !formValues.phone ||
+    !formValues.location ||
+    !formValues.reference ||
+    !isChecked;
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     // Ensure all fields are filled out
-    const { fullname, phone, location, dateRange } = formValues;
-    if (!fullname || !phone || !location || dateRange.some((date) => !date)) {
-      alert("All fields are required!");
+    const { dateRange } = formValues;
+    if (validateForm || dateRange.some((date) => !date)) {
+      alert("Please fill out all fields and accept the terms and conditions");
       setIsLoading(false);
       return;
     }
@@ -128,8 +134,21 @@ const Booking = () => {
     }
   };
 
+  const handleCheckboxChange = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleAcceptTerms = () => {
+    setIsChecked(true);
+    setIsModalOpen(false);
+  };
+  const handleRejectTerms = () => {
+    setIsChecked(false);
+    setIsModalOpen(false);
+  };
+
   return (
-    <div className="h-screen md:mt-[60px] mb-[220px] lg:mb-0">
+    <div className="h-screen md:mt-[60px] mb-[250px]">
       <article className="mx-auto text-center mb-[80px] -mt-10">
         <button className="bg-black bg-opacity-25 border border-[#CFB53B] border-opacity-25 px-7 py-2 hover:bg-inherit transition rounded-full">
           Book Now
@@ -247,20 +266,39 @@ const Booking = () => {
             <DateRangePicker
               showOneCalendar
               placeholder="e.g. 15 Dec 2023"
-              // format="mm/dd/yyyy"
               value={formValues.dateRange}
               onChange={(range) => handleInputChange("dateRange", range)}
               required
             />
             <p className="text-gray-500 text-[12px]">Day of event</p>
           </div>
+          <div className="flex flex-col gap-y-2">
+            <label htmlFor="phone" className="font-bold">
+              Payment Reference
+            </label>
+            <input
+              className="py-[6.5px] px-4 outline-none border-[1.2px] border-gray-200 rounded-lg hover:border-blue-400 transition-all placeholder-gray-500 placeholder:text-[12px]"
+              onChange={(e) => handleInputChange("reference", e.target.value)}
+              value={formValues.reference}
+              // placeholder="e.g. "
+              required
+            />
+            <p className="text-gray-500 text-[12px]">Mobile Money Reference</p>
+          </div>
+          <Checkbox
+            handleCheckboxChange={handleCheckboxChange}
+            handleAcceptTerms={handleAcceptTerms}
+            isModalOpen={isModalOpen}
+            isChecked={isChecked}
+            handleRejectTerms={handleRejectTerms}
+          />
+
           <button
             type="submit"
-            className=" mt-10 py-2 text-black rounded-lg"
-            style={{
-              backgroundImage: "linear-gradient(to bottom, #FAC97A, #E9BF5C)",
-            }}
-            disabled={isLoading}
+            className={`mt-4 py-2 text-black rounded-lg ${
+              validateForm ? "bg-gray-200" : "bg-gradient-yellow"
+            }`}
+            disabled={validateForm}
           >
             {isLoading ? "Submitting" : "Submit!"}
           </button>
