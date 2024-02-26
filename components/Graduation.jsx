@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import GradModal from "./GradModal";
 import LoginModal from "../components/LoginModal";
 import { GiGraduateCap } from "react-icons/gi";
 
@@ -31,7 +30,7 @@ const Graduation = () => {
           </p>
           <Link
             href={"/login"}
-            className="bg-btn-gradient py-2 px-3 rounded-full text-black text-sm font-semibold md:w-4/12 w-full"
+            className="bg-gradient-yellow py-2 px-3 rounded-full text-black text-sm font-semibold md:w-4/12 w-full text-center"
           >
             <button>Courses</button>
           </Link>
@@ -42,7 +41,6 @@ const Graduation = () => {
           </div>
         </div>
       </div>
-      {/* <GradModal isOpen={isModalOpen} onClose={closeModal} /> */}
     </section>
   );
 };
