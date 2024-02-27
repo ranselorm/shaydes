@@ -69,7 +69,7 @@ const Card = ({
           ))}
         </div>
         <Link href={`/booking/${id}`} passHref>
-          <button className="w-full rounded-md py-2 text-sm text-black font-bold group-hover:bg-btn-gradient bg-gray-300">
+          <button className="w-full rounded-md py-2 text-sm text-black font-bold group-hover:bg-gradient-yellow bg-gray-300">
             Book Now
           </button>
         </Link>

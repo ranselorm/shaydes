@@ -23,9 +23,9 @@ const RateCard = () => {
           </div>
         </div>
         <div className="flex md:items-center justify-center flex-col gap-12 md:px-4 px-0">
-          {cardData.map((item) => (
+          {cardData.map((item, index) => (
             <div
-              key={item.name}
+              key={index}
               className="flex justify-center mx-auto px-2 md:px-4"
             >
               <div className="">

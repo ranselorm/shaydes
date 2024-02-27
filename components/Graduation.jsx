@@ -3,10 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { GiGraduateCap } from "react-icons/gi";
 import { useAuth } from "../context/AuthContext";
+import AuthButton from "../components/AuthButton";
 
 const Graduation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { isAuthenticated } = useAuth();
+  const { user, loading } = useAuth();
+  console.log(loading);
 
   return (
     <section className="my-[30px]">
@@ -16,23 +18,22 @@ const Graduation = () => {
             54Shaydes Academia
             <GiGraduateCap className="text-[#FAC97A]" />
           </h3>
-
           <p className="md:text-left text-center">
             Dive into the basics of makeup application, mastering fundamental
             techniques, building a strong foundation and excellent customer
             relation . Learn about skincare and the essential tools to kickstart
             your makeup commercial or personal journey.
           </p>
-          <Link
-            href={"/login"}
-            className="bg-gradient-yellow py-2 px-3 rounded-full text-black text-sm font-semibold md:w-4/12 w-full text-center"
-          >
-            {isAuthenticated ? (
+          {!loading && user ? (
+            <Link
+              href={"/courses"}
+              className="bg-gradient-yellow py-2 px-3 rounded-full text-black text-sm font-semibold md:w-4/12 w-full text-center"
+            >
               <button>Courses</button>
-            ) : (
-              <button>Sign in with google</button>
-            )}
-          </Link>
+            </Link>
+          ) : (
+            <AuthButton />
+          )}
         </article>
         <div className="w-full md:w-4/12 flex justify-center">
           <div className="relative w-[350px] h-[350px] rounded-lg overflow-hidden">

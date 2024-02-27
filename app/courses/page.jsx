@@ -18,8 +18,6 @@ const Courses = () => {
     fetchData();
   }, []);
 
-  console.log(courseItems);
-
   const openModal = (course) => {
     setSelectedCourse(course);
     setIsModalOpen(true);
