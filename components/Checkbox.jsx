@@ -21,10 +21,10 @@ const Checkbox = ({
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
-          <div className="bg-white p-6 rounded-lg w-9/12">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 px-4 md:px-0">
+          <div className="bg-white p-6 rounded-lg md:w-9/12 w-full">
             <h2 className="text-lg font-bold mb-4">Terms and Conditions</h2>
-            <div className="h-[400px] overflow-y-auto">
+            <div className="md:h-[400px] h-[70vh] overflow-y-auto">
               <p className="text-gray-800 mb-4 text-[16px]">BOOKING POLICY</p>
               <p>
                 70% deposit of chosen package is made to secure date and time to
@@ -120,7 +120,7 @@ const Checkbox = ({
                 PLEASE NOTE THAT NO PAYMENT, NO RESERVED DATE PAYMENT MEANS
                 BRIDE HAS AGREED TO ALL THE ABOVE TERMS AND CONDITIONS
               </p>
-              <div className="mt-4 flex justify-end gap-4 px-4 pt-8">
+              <div className="mt-4 flex md:justify-end justify-center md:gap-4 gap-10 px-4 pt-8">
                 <button
                   type="submit"
                   className="py-2 text-black rounded-lg w-max px-6 border border-gray-800 hover:bg-gray-800 hover:text-white transition-all"

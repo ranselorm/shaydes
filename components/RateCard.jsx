@@ -33,7 +33,7 @@ const RateCard = () => {
                   {/* {item.name} */}
                 </h4>
                 {item.categories.map((data) => (
-                  <div key={data.name} className="">
+                  <div key={data.id} className="">
                     <div className="text-center">
                       <p className="mb-6 mt-12 font-bold text-[20px]">
                         {data.name}
@@ -41,8 +41,8 @@ const RateCard = () => {
                     </div>
 
                     <div className="flex flex-wrap justify-center items-center gap-4">
-                      {data.options.map((data, index) => (
-                        <Card {...data} key={index} />
+                      {data.options.map((data) => (
+                        <Card {...data} key={data.id} />
                       ))}
                     </div>
                   </div>

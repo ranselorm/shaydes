@@ -17,10 +17,10 @@ const Hero = () => {
     <section>
       <div className="flex justify-center flex-col items-left lg:items-center gap-y-6 pt-12 mb-[100px]">
         <article className="flex justify-center flex-col items-center gap-y-6 w-full lg:text-center mb-8">
-          <h2 className="font-semibold text-[16px] lg:text-[25px] lg:leading-[40px]">
+          <h2 className="font-semibold text-[16px] lg:text-[25px] lg:leading-[40px] text-center md:text-left">
             Beauty is CONFIDENT . Beauty is BOLD . Beauty is YOU
           </h2>
-          <p className="text-[#8d8a8a] text-[14px] md:text-[16px] w-9/12">
+          <p className="text-[#8d8a8a] text-[14px] md:text-[16px] md:w-9/12 w-full text-center md:text-left">
             We see beyond the normal standards and perception of what beauty is
             or should be hence BEAUTY BEYOND.{" "}
             <span className="cursor-pointer" onClick={() => setToggle(true)}>
@@ -28,7 +28,7 @@ const Hero = () => {
             </span>
           </p>
           {toggle && (
-            <div className="text-[#8d8a8a] text-[14px] md:text-[16px] w-9/12">
+            <div className="text-[#8d8a8a] text-[14px] md:text-[16px] md:w-9/12 w-full text-center md:text-left">
               <p>
                 Enhancing and paying wrapt attention to your natural features
                 and skin whiles creating looks that suits your style which cuts

@@ -10,6 +10,7 @@ import { ref, set, push } from "firebase/database";
 import { database } from "../../../firebase";
 import "rsuite/dist/rsuite-rtl.css";
 import Checkbox from "../../../components/Checkbox";
+import toast from "react-hot-toast";
 
 const Booking = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -32,8 +33,6 @@ const Booking = () => {
         const found = category.options.find((item) => item.id === id);
         if (found) {
           return found;
-        } else {
-          setNotFound(true);
         }
       }
     }
@@ -99,7 +98,6 @@ const Booking = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Ensure all fields are filled out
     const { dateRange } = formValues;
     if (validateForm || dateRange.some((date) => !date)) {
       alert("Please fill out all fields and accept the terms and conditions");
@@ -109,9 +107,9 @@ const Booking = () => {
 
     const formattedDates = formatDateRange(dateRange);
     const userData = {
-      fullname,
-      phone,
-      location,
+      fullname: formValues.fullname,
+      phone: formValues.phone,
+      location: formValues.location,
       dates: formattedDates,
       cardDetails: card,
     };
@@ -124,7 +122,9 @@ const Booking = () => {
         location: "",
         dateRange: [new Date(), new Date()],
       });
-      router.push("/success");
+
+      toast.success("Congratulations, booking is successful!");
+      router.push("/");
 
       console.log("Booking successful:", userData);
     } catch (error) {
@@ -148,7 +148,7 @@ const Booking = () => {
   };
 
   return (
-    <div className="h-screen md:mt-[60px] mb-[250px]">
+    <div className="h-screen md:mt-[60px] mb-[200px]">
       <article className="mx-auto text-center mb-[80px] -mt-10">
         <button className="bg-black bg-opacity-25 border border-[#CFB53B] border-opacity-25 px-7 py-2 hover:bg-inherit transition rounded-full">
           Book Now
@@ -193,7 +193,6 @@ const Booking = () => {
             ) : (
               <div className="h-10 mt-5" />
             )}
-
             <div className="mt-[20px]">
               {card.features.map((card, index) => (
                 <div key={index}>

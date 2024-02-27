@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import LoginModal from "../components/LoginModal";
 import { GiGraduateCap } from "react-icons/gi";
 
 const Graduation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
 
   return (
     <section className="my-[30px]">
@@ -23,10 +20,10 @@ const Graduation = () => {
             celebrate this significant achievement.
           </p>
           <p className="md:text-left text-center">
-            Don't miss the opportunity to secure your spot and make your
-            graduation day even more extraordinary with a professionally crafted
-            makeup look. Book now and let's make your graduation day a beautiful
-            and unforgettable experience!
+            Dive into the basics of makeup application, mastering fundamental
+            techniques, building a strong foundation and excellent customer
+            relation . Learn about skincare and the essential tools to kickstart
+            your makeup commercial or personal journey.
           </p>
           <Link
             href={"/login"}
