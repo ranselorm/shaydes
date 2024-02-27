@@ -15,7 +15,7 @@ const Hero = () => {
 
   return (
     <section>
-      <div className="flex justify-center flex-col items-left lg:items-center gap-y-6 pt-12 mb-[100px]">
+      <div className="flex justify-center flex-col-reverse items-left lg:items-center gap-y-6 pt-12 mb-[100px]">
         <article className="flex justify-center flex-col items-center gap-y-6 w-full lg:text-center mb-8">
           <h2 className="font-semibold text-[16px] lg:text-[25px] lg:leading-[40px] text-center md:text-left">
             Beauty is CONFIDENT . Beauty is BOLD . Beauty is YOU

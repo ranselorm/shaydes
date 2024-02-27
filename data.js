@@ -391,6 +391,29 @@ export const bridalItems = [
     img: "/reception.jpg",
   },
 ];
+export const sliderItems = [
+  {
+    img: "/n7.jpg",
+  },
+  {
+    img: "/n3.jpg",
+  },
+  {
+    img: "/n5.jpg",
+  },
+  {
+    img: "/n2.jpg",
+  },
+  {
+    img: "/n11.jpg",
+  },
+  {
+    img: "/n6.jpg",
+  },
+  {
+    img: "/n12.jpg",
+  },
+];
 
 // export const courseItems = [
 //   {

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GiGraduateCap } from "react-icons/gi";
+import { useAuth } from "../context/AuthContext";
 
 const Graduation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   return (
     <section className="my-[30px]">
@@ -14,11 +16,7 @@ const Graduation = () => {
             54Shaydes Academia
             <GiGraduateCap className="text-[#FAC97A]" />
           </h3>
-          <p className="md:text-left text-center">
-            I am committed to delivering a personalized and memorable
-            experience, ensuring that you look and feel your best as you
-            celebrate this significant achievement.
-          </p>
+
           <p className="md:text-left text-center">
             Dive into the basics of makeup application, mastering fundamental
             techniques, building a strong foundation and excellent customer
@@ -29,7 +27,11 @@ const Graduation = () => {
             href={"/login"}
             className="bg-gradient-yellow py-2 px-3 rounded-full text-black text-sm font-semibold md:w-4/12 w-full text-center"
           >
-            <button>Courses</button>
+            {isAuthenticated ? (
+              <button>Courses</button>
+            ) : (
+              <button>Sign in with google</button>
+            )}
           </Link>
         </article>
         <div className="w-full md:w-4/12 flex justify-center">

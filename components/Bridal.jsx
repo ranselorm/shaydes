@@ -50,10 +50,10 @@ const Bridal = () => {
             <h3 className="font-semibold text-[16px] md:text-[22px]">Bridal</h3>
           </div>
         </div>
-        <div>
+        {/* <div>
           <Button text="View More" hidden={true} />
           <Button icon={<IoIosArrowRoundForward />} />
-        </div>
+        </div> */}
       </div>
       <Slider {...settings} className="mt-[50px]">
         {bridalItems.map(({ id, name, img }) => (

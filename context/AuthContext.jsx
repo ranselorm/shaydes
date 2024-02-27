@@ -8,22 +8,23 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isAthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user);
-      setLoading(false);
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-  console.log(user);
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((user) => {
+  //     setUser(user);
+  //     setLoading(false);
+  //   });
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
+  // console.log(user);
   return (
-    <AuthContext.Provider value={{ user, setUser, loading, setLoading }}>
+    <AuthContext.Provider value={{ isAthenticated, setIsAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useUser = () => useContext(AuthContext).user;
+export const useAuth = () => useContext(AuthContext);

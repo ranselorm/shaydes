@@ -1,35 +1,11 @@
 "use client";
 import Image from "next/image";
 import Button from "./ui/Button";
-import { AiOutlineBuild } from "react-icons/ai";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const sliderItems = [
-  {
-    img: "/n7.jpg",
-  },
-  {
-    img: "/n3.jpg",
-  },
-  {
-    img: "/n5.jpg",
-  },
-  {
-    img: "/n2.jpg",
-  },
-  {
-    img: "/n11.jpg",
-  },
-  {
-    img: "/n6.jpg",
-  },
-  {
-    img: "/n12.jpg",
-  },
-];
+import { sliderItems } from "../data";
 
 const NonBridal = () => {
   const settings = {
